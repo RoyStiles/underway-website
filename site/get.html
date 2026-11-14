@@ -83,11 +83,11 @@ footer .sp{margin-right:auto}
 <!-- Sends iPhones to the App Store and Android phones to Google Play. One QR code for print (boat, business card). -->
 <h1>Get SlipMate</h1>
 <p class="muted">Taking you to the right store for your phone…</p>
-<div class="stores"><span class="store soon" aria-disabled="true"><span class="small">Coming soon to</span><span class="big">App Store</span></span><a class="store" href="https://play.google.com/store/apps/details?id=com.slipmate.app"><span class="small">Get it on</span><span class="big">Google Play</span></a></div>
+<div class="stores"><span class="store soon" aria-disabled="true"><span class="small">Coming soon to</span><span class="big">App Store</span></span><span class="store soon" aria-disabled="true"><span class="small">Coming soon to</span><span class="big">Google Play</span></span></div>
 <script>
 (function () {
   var ua = navigator.userAgent || '';
-  var apple = '/', google = 'https://play.google.com/store/apps/details?id=com.slipmate.app';
+  var apple = '/', google = '/';
   var go = /iPhone|iPad|iPod/i.test(ua) ? apple : /Android/i.test(ua) ? google : '';
   if (go && go !== '/') location.replace(go);
 })();

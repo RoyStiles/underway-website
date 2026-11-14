@@ -1,4 +1,4 @@
-﻿# SlipMate website
+# SlipMate website
 
 Plain HTML pages for the store listings: home (store buttons + QR codes), Privacy Policy, Terms, Support, Delete account, and `/get` (one QR code that sends iPhones to the App Store and Android phones to Google Play).
 
@@ -12,6 +12,7 @@ In PowerShell: `cd G:\Underway\underway-website`, then `npm run preview`, then o
 
 ## Before submitting to the stores
 - Set `siteUrl` and `supportEmail` in `config.json` (the page shows `YOUR-DOMAIN` until then).
+- Set `playStoreUrl` to `https://play.google.com/store/apps/details?id=com.slipmate.app` once the app is live on Google Play (it is blank now, so the site shows "Coming soon").
 - Set `appStoreUrl` once Apple gives the app an ID (`https://apps.apple.com/app/id1234567890`). The Apple QR and `/get` QR appear on the next build.
 - Have the Privacy Policy and Terms read by a lawyer, and make sure they match the Apple privacy labels and Google Data safety form.
 
