@@ -1,0 +1,10 @@
+{
+  "name": "slipmate-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node preview.mjs"
+  },
+  "devDependencies": { "qrcode": "1.5.4" }
+}

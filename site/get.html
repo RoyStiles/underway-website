@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get SlipMate · SlipMate</title>
+<meta name="description" content="SlipMate keeps your boat’s engines, maintenance, trips, destinations, fuel and documents in one place, even offshore with no signal.">
+<meta property="og:title" content="Get SlipMate · SlipMate">
+<meta property="og:description" content="SlipMate keeps your boat’s engines, maintenance, trips, destinations, fuel and documents in one place, even offshore with no signal.">
+<meta property="og:image" content="https://YOUR-DOMAIN/icon.png">
+<link rel="icon" href="icon.png">
+<link rel="preload" href="fonts/Knewave_400Regular.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+/* Same fonts as the app: Knewave for the SlipMate name, Barlow for text. Hosted here so visitors' browsers never call Google. */
+@font-face{font-family:Knewave;src:url(fonts/Knewave_400Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Barlow;src:url(fonts/Barlow_400Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Barlow;src:url(fonts/Barlow_600SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:Barlow;src:url(fonts/Barlow_700Bold.ttf) format("truetype");font-weight:700 900;font-display:swap}
+.wordmark{font-family:Knewave,"Segoe Script",cursive;font-weight:400}
+:root{--bg:#F6F1E8;--card:#fff;--text:#16212B;--muted:#4F5B66;--accent:#1E6FA8;--ok:#2B7352;--border:#D9D2C6;--head:#4E6A8F;--onhead:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#111B24;--card:#1A2633;--text:#E6EBF1;--muted:#9AA8B6;--accent:#6BB8DE;--ok:#5FC08F;--border:#2B3A4A;--head:#1A2633;--onhead:#E6EBF1}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:18px/1.55 Barlow,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+header{background:var(--head);color:var(--onhead)}
+.bar{max-width:880px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bar a{color:var(--onhead);text-decoration:none}
+.brand{display:flex;align-items:center;gap:10px;font-size:26px;margin-right:auto}
+.brand img{width:36px;height:36px;border-radius:9px}
+.bar nav a{margin-left:14px;font-size:15px;opacity:.92}
+main{max-width:880px;margin:0 auto;padding:28px 16px 48px}
+h1{font-size:36px;line-height:1.15;margin:0 0 12px}
+h2{font-size:22px;margin:32px 0 8px}
+p,li{color:var(--text)}
+.muted{color:var(--muted)}
+.banner{margin:-28px -16px 0;height:clamp(200px,38vw,380px);overflow:hidden;background:#1E9BF0}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.hero .icon{margin-top:-56px;position:relative;border:4px solid var(--bg)}
+.feature{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:center;margin:36px 0}
+.feature img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block}
+.feature h2{margin-top:0}
+.hero{text-align:center;padding:0 0 8px}
+.hero img.icon{width:112px;height:112px;border-radius:26px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.hero p.lead{font-size:20px;color:var(--muted);max-width:560px;margin:0 auto 20px}
+.stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.store{display:inline-flex;flex-direction:column;background:#111;color:#fff;text-decoration:none;border:1px solid #444;border-radius:12px;padding:8px 22px;min-width:190px;text-align:left}
+.store .small{font-size:12px;opacity:.85}.store .big{font-size:22px;font-weight:700;line-height:1.2}
+.store.soon{opacity:.55}
+.qrs{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin:24px 0}
+.qr{margin:0;text-align:center}
+.qr img,.qr .qrbox{width:160px;height:160px;border-radius:10px;border:1px solid var(--border);background:#fff;display:block;margin:0 auto 6px}
+.qr .qrbox{display:flex;align-items:center;justify-content:center;padding:12px;font-size:13px;color:#4F5B66;background:var(--card)}
+.qr figcaption{font-size:14px;color:var(--muted);max-width:170px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.grid .wide{grid-column:span 2}
+@media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.grid{grid-template-columns:1fr}.grid .wide{grid-column:auto}}
+/* Boat Readiness card: a copy of the one on the app's Home screen */
+.ready{display:flex;flex-direction:column;gap:8px;justify-content:center}
+.ready .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ready .top strong{font-size:17px}
+.ready .pill{border:1px solid var(--ok);color:var(--ok);border-radius:999px;padding:1px 11px;font-size:13px;font-weight:700}
+.ready .parts{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;text-align:center}
+.ready .part{display:flex;flex-direction:column;align-items:center;gap:1px}
+.ready .part svg{width:26px;height:26px;stroke:var(--ok);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:2px}
+.ready .part b{font-size:15px}.ready .part span{font-size:13px;color:var(--ok);font-weight:500}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.card h3{margin:0 0 4px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15.5px}
+.legal a{display:block;padding:12px 0;border-bottom:1px solid var(--border);text-decoration:none;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--card)}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+footer div{max-width:880px;margin:0 auto;padding:18px 16px;display:flex;gap:16px;flex-wrap:wrap}
+footer .sp{margin-right:auto}
+</style>
+</head>
+<body class="">
+<header><div class="bar">
+  <a class="brand" href="index.html"><img src="icon.png" alt=""><span class="wordmark">SlipMate</span></a>
+  <nav><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+</div></header>
+<main>
+<!-- Sends iPhones to the App Store and Android phones to Google Play. One QR code for print (boat, business card). -->
+<h1>Get SlipMate</h1>
+<p class="muted">Taking you to the right store for your phone…</p>
+<div class="stores"><span class="store soon" aria-disabled="true"><span class="small">Coming soon to</span><span class="big">App Store</span></span><a class="store" href="https://play.google.com/store/apps/details?id=com.slipmate.app"><span class="small">Get it on</span><span class="big">Google Play</span></a></div>
+<script>
+(function () {
+  var ua = navigator.userAgent || '';
+  var apple = '/', google = 'https://play.google.com/store/apps/details?id=com.slipmate.app';
+  var go = /iPhone|iPad|iPod/i.test(ua) ? apple : /Android/i.test(ua) ? google : '';
+  if (go && go !== '/') location.replace(go);
+})();
+</script>
+
+</main>
+<footer><div>
+  <span class="sp">© 2026 SlipMate</span>
+  <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a>
+</div></footer>
+</body>
+</html>
