@@ -57,8 +57,8 @@ for (const f of fs.readdirSync(pagesDir)) {
   const meta = {};
   body = body.replace(/^<!--\s*(\w+):\s*(.*?)\s*-->\s*/gm, (_, k, v) => { meta[k] = v; return ''; });
   const page = layout
-    .replaceAll('{{pageTitle}}', meta.title ? `${meta.title} · SlipMate` : 'SlipMate: boat management that works with no signal')
-    .replaceAll('{{pageDescription}}', meta.description ?? 'SlipMate keeps your boat’s engines, maintenance, trips, destinations, fuel and documents in one place, even offshore with no signal.')
+    .replaceAll('{{pageTitle}}', meta.title ? `${meta.title} · SlipMate` : 'SlipMate: Your boat. Always ready. Wherever you are.')
+    .replaceAll('{{pageDescription}}', meta.description ?? 'Service, parts, safety gear, fuel, trips and documents in one place, even with no signal.')
     .replace('{{bodyClass}}', meta.body ?? '')
     .replace('{{content}}', body);
   fs.writeFileSync(path.join(out, f), fill(page));

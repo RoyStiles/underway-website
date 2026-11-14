@@ -5,6 +5,13 @@ It holds the home page, Privacy Policy, Terms, Support, Delete account and `/get
 The app itself lives in a separate, private repo (`RoyStiles/slip-mate`). Nothing from the app goes in here.
 Read `README.md` for how to edit and rebuild.
 
+## Brand copy (use these exact words everywhere)
+
+- Name: **SlipMate** (one word, always).
+- Tagline: **Your boat. Always ready. Wherever you are.**
+- Description: **Service, parts, safety gear, fuel, trips and documents in one place, even with no signal.**
+- Used on the home page, the browser-tab title and the search description (`build.mjs`). Do not invent new taglines; ask me first.
+
 ## Change history (GitHub issues)
 
 GitHub issues are the full written history of changes to the website, same as in the app repo.
