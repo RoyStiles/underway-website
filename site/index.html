@@ -52,12 +52,14 @@ p,li{color:var(--text)}
 .qr img,.qr .qrbox{width:160px;height:160px;border-radius:10px;border:1px solid var(--border);background:#fff;display:block;margin:0 auto 6px}
 .qr .qrbox{display:flex;align-items:center;justify-content:center;padding:12px;font-size:13px;color:#4F5B66;background:var(--card)}
 .qr figcaption{font-size:14px;color:var(--muted);max-width:170px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}
 .grid .wide{grid-column:span 2}
 @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.grid{grid-template-columns:1fr}.grid .wide{grid-column:auto}}
 /* Boat Readiness card: a copy of the one on the app's Home screen */
 .ready{display:flex;flex-direction:column;gap:8px;justify-content:center}
+/* The readiness card sits in the top section, right under the tagline. */
+.hero .ready{max-width:560px;margin:6px auto 18px;text-align:left}
 .ready .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .ready .top strong{font-size:17px}
 .ready .pill{border:1px solid var(--ok);color:var(--ok);border-radius:999px;padding:1px 11px;font-size:13px;font-weight:700}
@@ -86,6 +88,15 @@ footer .sp{margin-right:auto}
   <img class="icon" src="icon.png" alt="SlipMate app icon">
   <h1 class="wordmark">SlipMate</h1>
   <p class="tagline">Your boat. Always ready. Wherever you are.</p>
+  <div class="card ready" role="img" aria-label="Boat Readiness: Ready. Service all clear, Safety all clear, Parts all stocked, Docs all current.">
+    <div class="top"><strong>Boat Readiness</strong><span class="pill">Ready</span></div>
+    <div class="parts">
+      <div class="part"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.5 2.5l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.5-.5-2.4z"/></svg><b>Service</b><span>All clear</span></div>
+      <div class="part"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.2 2.9 7.6 7 9 4.1-1.4 7-4.8 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg><b>Safety</b><span>All clear</span></div>
+      <div class="part"><svg viewBox="0 0 24 24"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg><b>Parts</b><span>All stocked</span></div>
+      <div class="part"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.3 1.7-2 3-2s2.4.7 3 2M14 10h4M14 13h4"/></svg><b>Docs</b><span>All current</span></div>
+    </div>
+  </div>
   <p class="lead">Service, parts, safety gear, fuel, trips and documents in one place, even with no signal.</p>
   <div class="stores"><span class="store soon" aria-disabled="true"><span class="small">Coming soon to</span><span class="big">App Store</span></span><span class="store soon" aria-disabled="true"><span class="small">Coming soon to</span><span class="big">Google Play</span></span></div>
   <div class="qrs"><figure class="qr off"><div class="qrbox">QR code appears here once the app is live</div><figcaption>the App Store</figcaption></figure><figure class="qr off"><div class="qrbox">QR code appears here once the app is live</div><figcaption>Google Play</figcaption></figure></div>
@@ -97,15 +108,6 @@ footer .sp{margin-right:auto}
   <div class="card"><h3>Maintenance that adds up</h3><p>Service intervals by date or engine hours, with the engine hours tracked as readings.</p></div>
   <div class="card"><h3>Trips and destinations</h3><p>Log trips and fuel, save marinas and anchorages, and find places near you.</p></div>
   <div class="card"><h3>Documents on hand</h3><p>Registration, insurance, manuals and photos, with expiry dates you won’t miss.</p></div>
-  <div class="card wide ready" role="img" aria-label="Boat Readiness: Ready. Service all clear, Safety all clear, Parts all stocked, Docs all current.">
-    <div class="top"><strong>Boat Readiness</strong><span class="pill">Ready</span></div>
-    <div class="parts">
-      <div class="part"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.5 2.5l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.5-.5-2.4z"/></svg><b>Service</b><span>All clear</span></div>
-      <div class="part"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.2 2.9 7.6 7 9 4.1-1.4 7-4.8 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg><b>Safety</b><span>All clear</span></div>
-      <div class="part"><svg viewBox="0 0 24 24"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg><b>Parts</b><span>All stocked</span></div>
-      <div class="part"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.3 1.7-2 3-2s2.4.7 3 2M14 10h4M14 13h4"/></svg><b>Docs</b><span>All current</span></div>
-    </div>
-  </div>
 </div>
 
 <div class="feature">
