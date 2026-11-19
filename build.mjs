@@ -45,6 +45,20 @@ const tokens = {
   appleHref: cfg.appStoreUrl || '/',
   googleHref: cfg.playStoreUrl || '/',
 };
+// ---- Screenshot slots: {{shot:tour-home|Caption}} in a page ----
+// Shows pages/screenshots/tour-home.webp (or .png / .jpg) when that file exists, and a labeled placeholder box until then.
+const shotDir = path.join(pagesDir, 'screenshots');
+const shotTypes = ['webp', 'png', 'jpg', 'jpeg'];
+const missingShots = [];
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+const shots = (s) => s.replace(/\{\{shot:([a-z0-9-]+)\|([^}]*)\}\}/g, (_, name, caption) => {
+  const ext = shotTypes.find((e) => fs.existsSync(path.join(shotDir, `${name}.${e}`)));
+  const cap = caption.trim();
+  if (ext) return `<figure class="shot"><img src="screenshots/${name}.${ext}" alt="${esc(cap)}" loading="lazy"><figcaption>${cap}</figcaption></figure>`;
+  missingShots.push(name);
+  return `<figure class="shot" data-shot="${name}"><div class="ph" role="img" aria-label="Screenshot coming soon: ${esc(cap)}"><b>Screenshot coming soon</b><span>${cap}</span><code>screenshots/${name}.webp</code></div></figure>`;
+});
+
 const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (_, k) => (k in tokens ? String(tokens[k]) : `{{${k}}}`));
 
 // ---- Pages ----
@@ -60,7 +74,7 @@ for (const f of fs.readdirSync(pagesDir)) {
     .replaceAll('{{pageTitle}}', meta.title ? `${meta.title} · SlipMate` : 'SlipMate: Your boat. Always ready. Wherever you are.')
     .replaceAll('{{pageDescription}}', meta.description ?? 'Service, parts, safety gear, fuel, trips and documents in one place, even with no signal.')
     .replace('{{bodyClass}}', meta.body ?? '')
-    .replace('{{content}}', body);
+    .replace('{{content}}', () => shots(body));
   fs.writeFileSync(path.join(out, f), fill(page));
 }
 
@@ -71,5 +85,6 @@ const leftover = [...fs.readdirSync(out)].filter((f) => f.endsWith('.html'))
 if (leftover.length) warn.push(`Unfilled tokens: ${leftover.join(', ')}`);
 for (const k of ['siteUrl', 'supportEmail']) if (placeholder(cfg[k])) warn.push(`config.json "${k}" is still a placeholder.`);
 
+if (missingShots.length) warn.push(`${missingShots.length} screenshot slots still show a placeholder (add them to pages/screenshots/): ${missingShots.join(', ')}`);
 console.log(`Built ${fs.readdirSync(out).length} items into website/site`);
 for (const w of warn) console.log(`  ! ${w}`);

@@ -1,0 +1,753 @@
+<!-- title: User Guides -->
+<!-- description: Step-by-step help for every part of SlipMate, from signing up and adding your boat to reports, exporting your data and deleting your account. -->
+<h1 id="top">User Guides</h1>
+<p class="muted">Step-by-step help for every part of SlipMate. Search for a word below, or pick a topic from the contents. Still stuck? Email <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>.</p>
+
+<div class="guide-tools" role="search">
+  <form class="guide-search" id="guide-search" autocomplete="off">
+    <label for="guide-q" class="sr">Search the guides</label>
+    <input id="guide-q" type="search" placeholder="Search, e.g. hours or units" aria-describedby="search-status">
+    <button type="button" id="hit-prev" disabled aria-label="Previous match">Prev</button>
+    <button type="button" id="hit-next" disabled aria-label="Next match">Next</button>
+  </form>
+  <p class="search-status" id="search-status" aria-live="polite"></p>
+  <div class="search-hits" id="search-hits"></div>
+</div>
+
+<nav class="toc" aria-labelledby="toc-title">
+  <h2 id="toc-title">Contents</h2>
+  <ol>
+    <li><a href="#getting-started">Getting started</a>
+      <ol>
+        <li><a href="#install">Install SlipMate</a></li>
+        <li><a href="#sign-up">Create your account</a></li>
+        <li><a href="#sign-in">Sign in and reset your password</a></li>
+        <li><a href="#add-boat">Add your boat</a></li>
+        <li><a href="#boat-setup">Boat Setup</a></li>
+      </ol></li>
+    <li><a href="#getting-around">Getting around</a>
+      <ol>
+        <li><a href="#home">The Home screen</a></li>
+        <li><a href="#readiness">Boat Readiness</a></li>
+        <li><a href="#bottom-bar">The bottom bar</a></li>
+        <li><a href="#records">Adding, viewing and editing records</a></li>
+        <li><a href="#search">Search</a></li>
+        <li><a href="#offline">Working with no signal</a></li>
+      </ol></li>
+    <li><a href="#settings">Settings</a>
+      <ol>
+        <li><a href="#settings-account">Account</a></li>
+        <li><a href="#settings-boats">Boats</a></li>
+        <li><a href="#units">Units</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#sync">Sync</a></li>
+        <li><a href="#theme">Theme</a></li>
+        <li><a href="#suggest">Suggest a feature</a></li>
+      </ol></li>
+    <li><a href="#vessel">Vessel</a>
+      <ol>
+        <li><a href="#vessel-details">Details</a></li>
+        <li><a href="#capacities">Capacities</a></li>
+        <li><a href="#engines">Engines</a></li>
+        <li><a href="#systems">Systems and Electronics</a></li>
+        <li><a href="#docs">Docs</a></li>
+      </ol></li>
+    <li><a href="#engine-hours">Engine hours</a></li>
+    <li><a href="#maintenance">Maintenance</a>
+      <ol>
+        <li><a href="#scheduled">Scheduled services</a></li>
+        <li><a href="#open">Open maintenance</a></li>
+        <li><a href="#completed">Completed maintenance</a></li>
+        <li><a href="#review-services">Review Scheduled Services</a></li>
+      </ol></li>
+    <li><a href="#parts">Parts on hand</a></li>
+    <li><a href="#manuals">Manuals</a></li>
+    <li><a href="#safety-gear">Safety gear</a></li>
+    <li><a href="#destinations">Destinations and Places Near Me</a></li>
+    <li><a href="#float-plans">Float plans and contacts</a></li>
+    <li><a href="#trip-log">Trip log</a></li>
+    <li><a href="#fuel-log">Fuel log</a></li>
+    <li><a href="#fuel-efficiency">Fuel efficiency</a></li>
+    <li><a href="#reports">Reports</a>
+      <ol>
+        <li><a href="#fuel-report">Fuel Efficiency report</a></li>
+        <li><a href="#sales-report">Sales / Survey report</a></li>
+        <li><a href="#csv">Spreadsheet (CSV) files</a></li>
+      </ol></li>
+    <li><a href="#export">Export all your data</a></li>
+    <li><a href="#delete-account">Delete your account</a></li>
+    <li><a href="#help">Getting more help</a></li>
+  </ol>
+</nav>
+
+<div class="guide" id="guide">
+
+<section id="getting-started">
+<h2>Getting started</h2>
+
+<h3 id="install">Install SlipMate</h3>
+<p>SlipMate is for iPhone and Android phones.</p>
+<ol>
+  <li>On your phone, open the App Store (iPhone) or Google Play (Android).</li>
+  <li>Search for <strong>SlipMate</strong> and install it. You can also open <a href="get.html">underwayapps.com/get</a> on your phone, which sends you to the right store.</li>
+  <li>Open SlipMate. You’ll see the sign-in screen.</li>
+</ol>
+<div class="note">SlipMate is coming soon to the App Store and Google Play. The store buttons on the <a href="index.html">home page</a> go live when it does.</div>
+
+<h3 id="sign-up">Create your account</h3>
+<p>You need a signal for this step, because your account is made on our server.</p>
+<ol>
+  <li>On the sign-in screen, tap <strong>Create a New Account</strong>.</li>
+  <li>Type your <strong>Email</strong> and a <strong>Password</strong>. Passwords need at least 8 characters. Use the show button in the password box to see what you typed.</li>
+  <li>Tick <strong>Accept the Terms of Use and Privacy Policy</strong>. Tap the underlined words to read the <a href="terms.html">Terms of Use</a> or the <a href="privacy.html">Privacy Policy</a> first. The <strong>Create Account</strong> button stays greyed out until the box is ticked.</li>
+  <li>Tap <strong>Create Account</strong>. You’ll see “Check your email to confirm your account, then sign in.”</li>
+  <li>Open the email from SlipMate and tap the confirmation link.</li>
+  <li>Back in SlipMate, tap <strong>Have an Account? Sign In</strong>, then sign in with the same email and password.</li>
+</ol>
+<div class="note">No email? Check your junk or spam folder, and make sure the address was typed correctly.</div>
+
+<h3 id="sign-in">Sign in and reset your password</h3>
+<ol>
+  <li>Type your <strong>Email</strong> and <strong>Password</strong>, then tap <strong>Sign In</strong>.</li>
+</ol>
+<p><strong>Forgot your password?</strong></p>
+<ol>
+  <li>Type your email in the <strong>Email</strong> box first.</li>
+  <li>Tap <strong>Forgot Password</strong> under the buttons. SlipMate emails you a reset code. Tap <strong>OK</strong>.</li>
+  <li>On the next screen, check your <strong>Email</strong>, type the <strong>Code from the email</strong>, then your <strong>New password</strong> and <strong>Type it again</strong>.</li>
+  <li>Tap <strong>Save New Password</strong>, then sign in with the new password.</li>
+</ol>
+<p>If you already have a code, tap <strong>I Have a Reset Code</strong> to go straight to that screen.</p>
+
+<h3 id="add-boat">Add your boat</h3>
+<p>The first time you sign in you’ll see <strong>Welcome aboard</strong>.</p>
+<ol>
+  <li>Type your boat’s name under <strong>Vessel name</strong>.</li>
+  <li>Tap <strong>Add My Boat</strong>. You’ll land on the Home screen.</li>
+</ol>
+<p>One subscription includes up to 2 boats. To add the second one later, see <a href="#settings-boats">Settings › Boats</a>.</p>
+
+<h3 id="boat-setup">Boat Setup</h3>
+<p>Boat Setup asks about your boat, engines and systems, then builds a maintenance schedule and a parts list for you to start from. You can skip any step and come back.</p>
+<ol>
+  <li>On Home, find the <strong>Set up your boat</strong> card and tap <strong>Start setup</strong>. (Tap <strong>Hide this</strong> if you’d rather add everything yourself.)</li>
+  <li>Each screen shows <strong>Step X of Y</strong> and a progress bar. Tap <strong>‹</strong> at the top left to go back, or <strong>Skip for now</strong> at the top right to leave and finish later.</li>
+</ol>
+<p>The steps are:</p>
+<dl>
+  <dt>Boat</dt>
+  <dd>Type in <strong>Search makes</strong> and tap your make. Then tap your model. Can’t find it? Tap <strong>My make isn’t listed</strong> or <strong>My model isn’t listed</strong> and type it. Add the <strong>Model Year (Optional)</strong>, then <strong>Continue</strong>. Tap <strong>Change</strong> to pick a different make or model.</dd>
+  <dt>Water &amp; Season</dt>
+  <dd>Choose <strong>Salt water</strong>, <strong>Brackish</strong>, <strong>Fresh water</strong> or <strong>It varies</strong>. Then tick <strong>I boat year round</strong>, or pick the months your season starts and ends. The months set when Winterization and Spring Commissioning come due; year round skips them.</dd>
+  <dt>Engines</dt>
+  <dd>Pick the <strong>Engine type</strong> (Outboard; Inboard/Outboard (Stern Drive/Pod Drive); Inboard (Direct Drive/V-Drive); Jet Drive; or Electric) and <strong>How many engines drive the boat?</strong> (1 to 4).</dd>
+  <dt>Dinghy, Tender and Kicker</dt>
+  <dd>Answer whether you have a dinghy or tender, whether it has an engine, and whether you have a kicker motor. A dinghy engine or kicker gets its own services and engine hours.</dd>
+  <dt>Pick Your Engines</dt>
+  <dd>Tap the engine model for each engine. Horsepower, displacement and cylinders fill in from the catalog and can be changed. Not listed? Tap <strong>Other / not listed</strong> and type the make and model.</dd>
+  <dt>Engine service screens</dt>
+  <dd>A list of common services for your engines. See <a href="#setup-services">Choosing services</a> below.</dd>
+  <dt>Boat Systems</dt>
+  <dd>Answer <strong>Yes</strong> or <strong>No</strong> for each system your boat has (AC, generator, thrusters, windlass and so on). Each yes adds a screen of services. Seacocks, bilge pumps, steering and batteries are on every boat, so their screens always show.</dd>
+  <dt>Pick Your Generator</dt>
+  <dd>Shown if you have a generator. Tap the model, or skip it.</dd>
+  <dt>System screens, Winterization and Spring Commissioning</dt>
+  <dd>One screen of services for each system. Winterization and Spring Commissioning are skipped if you boat year round.</dd>
+  <dt>Finished Schedule</dt>
+  <dd>A list of every service you kept and its interval. Tap <strong>Save Schedule</strong>. (Or <strong>Finish Without Saving Services</strong> to leave without adding them.)</dd>
+</dl>
+<p id="setup-services"><strong>Choosing services.</strong> On each service screen:</p>
+<ul>
+  <li>Every service has a <strong>Keep</strong> tick box, on to start. Untick the ones you don’t want. <strong>Select All</strong> and <strong>Unselect All</strong> do the whole screen.</li>
+  <li>The typical interval is shown as a guide. Type your own interval in <strong>Every</strong> (months or years) and, for engine work, <strong>Hours</strong>.</li>
+  <li>Tap <strong>Show Details</strong> for the tasks and notes that go with a service.</li>
+  <li>Under <strong>Enter Last Done for Items Below on Save</strong>, type a <strong>Date</strong> and, if you know them, <strong>Hours (Optional)</strong>. When you tap <strong>Continue</strong>, they’re added to every selected service that doesn’t have its own.</li>
+  <li>A kept service with no interval is marked <strong>No Interval Set</strong>. It’s saved, but never counted as due until you give it one.</li>
+</ul>
+<div class="note">Suggested services, parts and intervals are starting points, not instructions. Always follow your manufacturer’s manual. See <a href="terms.html#suggested-parts">Suggested parts and service intervals</a> in the Terms of Use.</div>
+<p>To run Boat Setup again (for example after repowering), go to <a href="#settings-boats">Settings › Boats</a> and tap <strong>Run boat setup again for</strong> your boat. A rerun updates your schedule; it doesn’t make duplicates.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="getting-around">
+<h2>Getting around</h2>
+
+<h3 id="home">The Home screen</h3>
+<p>From top to bottom:</p>
+<ul>
+  <li><strong>The blue bar.</strong> Tap <strong>SlipMate</strong> to come back Home from anywhere. Tap the magnifying glass to <a href="#search">search</a>. On other screens a back arrow appears at the left.</li>
+  <li><strong>Your boat card.</strong> The boat’s photo, name, year, make and model, HIN and registration number. Tap the photo to <strong>Take Photo</strong>, <strong>Choose Photo</strong> or <strong>Remove Photo</strong>. Tap the name to open the vessel details.</li>
+  <li><strong><a href="#readiness">Boat Readiness</a></strong> inside the boat card.</li>
+  <li><strong>The four areas:</strong> <strong>Vessel</strong>, <strong>Maintenance</strong>, <strong>Destinations</strong> and <strong>Fuel</strong>. Each shows a short summary, such as “2 due · 1 open”. A red number means something needs you.</li>
+  <li><strong>Upcoming Maintenance:</strong> the next services due. Tap <strong>Schedule</strong> to see them all.</li>
+  <li><strong>Next Float Plan:</strong> your next outing. Tap <strong>New Plan</strong> to start one.</li>
+  <li><strong>Recent Activity:</strong> your last trip, last fill-up and last engine hours update.</li>
+  <li>At the bottom, when you last synced, or how many changes are waiting for a signal.</li>
+</ul>
+<p>Inside an area, the card at the top shows the area’s main lists as big numbers, with its other lists as small buttons underneath. Tap any of them to switch lists.</p>
+<table>
+  <tr><th>Area</th><th>Lists inside it</th></tr>
+  <tr><td>Vessel</td><td>Details, Engines, Capacities, Systems, Electronics, Docs</td></tr>
+  <tr><td>Maintenance</td><td>Scheduled, Open, Completed, Parts, Manuals (and Switching, on boats that have digital switching records)</td></tr>
+  <tr><td>Destinations</td><td>Destinations, Float Plans, Trip Log, Contacts, Safety Gear</td></tr>
+  <tr><td>Fuel</td><td>Fuel Log, Fuel Efficiency</td></tr>
+</table>
+
+<h3 id="readiness">Boat Readiness</h3>
+<p>Boat Readiness answers “is the boat ready to go?” It has one verdict and four signals.</p>
+<ul>
+  <li>The verdict: <strong>Ready</strong> (green), <strong>Attention Soon</strong> (yellow) or <strong>Action Needed</strong> (red).</li>
+  <li><strong>Service:</strong> scheduled services overdue or due soon.</li>
+  <li><strong>Safety:</strong> safety gear expired or expiring soon, plus overdue Fire Suppression and Bilge Pumps services.</li>
+  <li><strong>Parts:</strong> parts that are out or below the quantity you want aboard.</li>
+  <li><strong>Docs:</strong> documents expired or expiring soon.</li>
+</ul>
+<p>Tap a signal to open that list, with the problems at the top.</p>
+
+<h3 id="bottom-bar">The bottom bar</h3>
+<p>Along the bottom of Home and the area screens:</p>
+<ul>
+  <li><strong>Home</strong></li>
+  <li><strong>Service:</strong> the Maintenance area.</li>
+  <li><strong>Trips:</strong> your trip log and float plans.</li>
+  <li><strong>Safety:</strong> your safety gear.</li>
+  <li><strong>Settings:</strong> opens the <a href="#settings">Settings</a> sheet.</li>
+</ul>
+
+<h3 id="records">Adding, viewing and editing records</h3>
+<p>Every list works the same way.</p>
+<ol>
+  <li><strong>Add:</strong> tap the blue add button at the top of the list, such as <strong>+ Add Part</strong>, <strong>+ Add Trip</strong> or <strong>+ Add Fill-Up</strong>. A form slides up.</li>
+  <li>Fill in what you know. Only the first box (the name) is required. Tap <strong>Save</strong>, or <strong>Cancel</strong> to close without saving.</li>
+  <li><strong>View:</strong> tap a card to open it and read every field. Links, phone numbers and files can be tapped.</li>
+  <li><strong>Edit:</strong> at the bottom of the record, tap <strong>Edit</strong> (for example <strong>Edit Part</strong>). Change what you need and tap <strong>Save</strong>.</li>
+  <li><strong>Delete:</strong> in the edit form, tap <strong>Delete</strong>, then <strong>Tap Again to Delete</strong> within a few seconds.</li>
+</ol>
+<ul>
+  <li><strong>Filters:</strong> many lists have a filter button beside the add button (for example <strong>Filter: All</strong>) to show one component, type or sea condition.</li>
+  <li><strong>Dates:</strong> tap a date box to pick a date. Tap <strong>Clear</strong> to empty it.</li>
+  <li><strong>Positions (Lat/Long):</strong> tap the location button beside the box to fill in where you are now.</li>
+  <li><strong>Files and photos:</strong> use <strong>Add File</strong>, <strong>Add Photo</strong> or <strong>Take Photo</strong> (where offered), and <strong>Remove</strong> to take one off.</li>
+</ul>
+
+<h3 id="search">Search</h3>
+<ol>
+  <li>Tap the magnifying glass in the blue bar.</li>
+  <li>Type a word: a part number, an engine serial number, a marina, a service name.</li>
+  <li>Matches show under each section’s name. Tap one to open it.</li>
+</ol>
+<p>Search looks through everything on the boat you have open, and works with no signal.</p>
+
+<h3 id="offline">Working with no signal</h3>
+<p>SlipMate saves every change on your phone first, so you can use it anywhere.</p>
+<ul>
+  <li>With no signal, Home says <strong>Offline</strong> and how many changes will sync when you’re back online.</li>
+  <li>Changes sync on their own when you have a signal. You can also sync by hand in <a href="#sync">Settings › Sync</a>.</li>
+  <li>You need a signal to create an account and sign in the first time, to sync, to download a state for Places Near Me, to open a file you have never opened on this phone, and to send a float plan.</li>
+</ul>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="settings">
+<h2>Settings</h2>
+<p>Tap <strong>Settings</strong> on the bottom bar. A sheet slides up with <strong>Account</strong>, <strong>Boats</strong>, <strong>Units</strong>, <strong>Notifications</strong>, <strong>Sync</strong>, <strong>Suggest a feature</strong> and <strong>Theme</strong>. Tap one to open it. Tap the X or the dimmed screen to close the sheet.</p>
+
+<h3 id="settings-account">Account</h3>
+<ul>
+  <li>Shows the email you sign in with.</li>
+  <li><strong>Change Email Address:</strong> type the <strong>New email address</strong> and tap <strong>Send Confirmation</strong>. Tap the link in each email you get (there may be one at each address). Until both are confirmed, keep signing in with your old address.</li>
+  <li><strong>Plan:</strong> one yearly subscription that includes up to two boats and every feature, with a 30-day free trial. Starting the trial from inside the app is coming soon.</li>
+  <li><strong>Sign Out:</strong> if some changes haven’t synced yet, SlipMate warns you first, because they would be lost. Choose <strong>Stay Signed In</strong> and sync, or <strong>Sign Out Anyway</strong>.</li>
+  <li><strong>Export All My Data:</strong> see <a href="#export">Export all your data</a>.</li>
+  <li><strong>Delete Account:</strong> see <a href="#delete-account">Delete your account</a>.</li>
+</ul>
+
+<h3 id="settings-boats">Boats</h3>
+<ul>
+  <li><strong>Switch boats:</strong> tap a boat’s name. The one you’re in has a tick and is blue.</li>
+  <li><strong>Add another boat:</strong> type its name in <strong>Add another boat</strong> and tap <strong>Add Boat</strong>. One subscription includes up to 2 boats.</li>
+  <li><strong>Run boat setup again for</strong> your boat: reruns <a href="#boat-setup">Boat Setup</a> for the boat you’re in.</li>
+  <li><strong>Review Scheduled Services:</strong> see <a href="#review-services">Review Scheduled Services</a>.</li>
+  <li><strong>Delete</strong> your boat (red button, for the boat’s owner): four questions in a row make sure you mean it. <strong>Are You Sure?</strong>, <strong>This Is Not Reversible</strong>, <strong>Have You Exported Your Data?</strong> (tap <strong>Export First</strong> to save a copy) and <strong>Last Chance</strong>. Tap <strong>Delete Boat</strong> to finish. The boat and all its records are removed from every phone, and it frees up a boat on your subscription.</li>
+</ul>
+
+<h3 id="units">Units</h3>
+<p>Choose how speeds, distances and volumes are shown on this phone.</p>
+<ul>
+  <li><strong>Speed:</strong> MPH or Knots.</li>
+  <li><strong>Distance:</strong> Miles, Nautical miles or Kilometers.</li>
+  <li><strong>Volume:</strong> Gallons or Liters.</li>
+</ul>
+<p>Tap a choice and every screen, chart and report follows it. Fuel economy follows too (MPG, NMPG, km/L and so on), and so does fuel burn (GPH or L/h). Changing a unit never changes your records, only how they’re shown, so you can switch back and forth safely. Lengths such as LOA, beam and draft are always in feet. Each phone keeps its own choice.</p>
+
+<h3 id="notifications">Notifications</h3>
+<p>Choose what this phone tells you about. Notifications are made on your phone, so they work with no signal and with SlipMate closed. They never alert anyone else.</p>
+<ul>
+  <li><strong>Float plans only:</strong> reminders when a float plan you sent is due back.</li>
+  <li><strong>Float plans and readiness changes:</strong> also when Service, Safety, Parts or Docs turns yellow or red.</li>
+  <li><strong>Float plans, readiness and individual items:</strong> also each time a service comes due, something expires or a part runs low.</li>
+</ul>
+<p>Items with no expiration date entered don’t send a notification. If you see “Notifications are not allowed on this phone yet”, tap <strong>Allow Notifications</strong>. If they’re turned off in your phone’s own settings, turn them on there.</p>
+
+<h3 id="sync">Sync</h3>
+<p>Shows when this phone last synced and how many changes are waiting. Tap <strong>Sync Now</strong> to sync straight away. If a change couldn’t sync, it’s listed here in red with the reason. Email support if it doesn’t clear.</p>
+
+<h3 id="theme">Theme</h3>
+<p>At the bottom of the Settings sheet, choose <strong>Auto</strong> (follows your phone), <strong>Light</strong> or <strong>Dark</strong>.</p>
+
+<h3 id="suggest">Suggest a feature</h3>
+<ol>
+  <li>In the Settings sheet, tap <strong>Suggest a feature</strong>.</li>
+  <li>Answer the questions. Only the first one is required.</li>
+  <li>Tap <strong>Send</strong>. With no signal, it’s saved and sent when you’re back online.</li>
+</ol>
+<p>You can send one suggestion a day. We read every one, but we don’t reply to each.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="vessel">
+<h2>Vessel</h2>
+<p>On Home, tap <strong>Vessel</strong> (or tap your boat’s name on the boat card).</p>
+
+<h3 id="vessel-details">Details</h3>
+<ol>
+  <li>Tap <strong>Details</strong> in the Vessel card, then <strong>Edit Vessel</strong>.</li>
+  <li>Fill in what you know: <strong>Vessel name</strong>, <strong>Make / model</strong>, <strong>Model year</strong>, <strong>Year built</strong>, <strong>Hull type / material</strong>, <strong>HIN (hull ID number)</strong>, <strong>Registration / documentation #</strong>, <strong>MMSI (fixed VHF)</strong>, <strong>MMSI (handheld)</strong>, <strong>Home port</strong>, <strong>Length overall (LOA)</strong>, <strong>Beam</strong>, <strong>Draft</strong>, <strong>Deadrise at transom</strong>, <strong>Displacement / dry weight</strong> and <strong>Notes</strong>.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+<p>The <strong>Sales / Survey Report</strong> button is also here. See <a href="#sales-report">Sales / Survey report</a>.</p>
+
+<h3 id="capacities">Capacities</h3>
+<ol>
+  <li>Tap <strong>Capacities</strong>, then <strong>Edit Capacities</strong>.</li>
+  <li>Fill in <strong>Air draft (waterline to highest point)</strong>, the tank sizes (<strong>Fuel</strong>, <strong>Fresh water</strong>, <strong>Holding tank</strong>, <strong>Grey water</strong>, <strong>Water heater</strong>), <strong>Propane</strong>, <strong>Battery banks (type, count, Ah)</strong>, <strong>Anchor &amp; rode</strong>, <strong>Max persons</strong>, <strong>Max load / max HP rating</strong> and <strong>Notes</strong>.</li>
+  <li>Tap <strong>Save</strong>. Tank sizes are shown in gallons or liters, as set in <a href="#units">Units</a>.</li>
+</ol>
+
+<h3 id="engines">Engines</h3>
+<p>Boat Setup adds your engines for you. To add or change one:</p>
+<ol>
+  <li>Tap <strong>Engines</strong>, then <strong>+ Add Engine</strong> (or tap an engine, then <strong>Edit</strong>).</li>
+  <li>Fill in <strong>Position / name (e.g. Port)</strong> and <strong>Type</strong> (<strong>Propulsion</strong> or <strong>Generator</strong>).</li>
+  <li>For a dinghy engine, tick <strong>Dinghy engine</strong>. For a kicker, tick <strong>Kicker</strong>. Each gets its own services and hours.</li>
+  <li>Add <strong>Make / model</strong>, <strong>Serial #</strong>, <strong>Hour meter now</strong> (the starting reading), <strong>Horsepower</strong>, <strong>Max RPM (WOT)</strong>, <strong>Displacement</strong>, <strong>Cylinders</strong>, <strong>Engine type</strong>, <strong>Fuel</strong> and <strong>Alternator</strong>.</li>
+  <li>For propulsion engines: <strong>Transmission model</strong>, <strong>Transmission serial #</strong>, <strong>Gear ratio</strong> and <strong>Propeller (diameter × pitch, blades)</strong>.</li>
+  <li><strong>Display order</strong> sets the order engines are listed (1 first). Tap <strong>Save</strong>.</li>
+</ol>
+<p>Oil, filters, coolant, impellers and belts are kept as <a href="#parts">parts</a>, under the Engine/s or Generator component. Tap an engine card to see all its details and its current hours.</p>
+
+<h3 id="systems">Systems and Electronics</h3>
+<p><strong>Systems</strong> is for the equipment aboard (watermaker, windlass, AC unit and so on). <strong>Electronics</strong> is for your devices (chartplotter, radar, VHF, autopilot).</p>
+<ol>
+  <li>Tap <strong>Systems</strong> and <strong>+ Add System</strong>, or <strong>Electronics</strong> and <strong>+ Add Device</strong>.</li>
+  <li>Systems: <strong>Item</strong>, <strong>Location</strong>, <strong>Make / model</strong>, <strong>Serial #</strong>, <strong>Installed</strong> and <strong>Notes (p/n, manual, warranty)</strong>.</li>
+  <li>Electronics: <strong>Device</strong>, <strong>Make / model</strong>, <strong>Serial #</strong>, <strong>Software / firmware version</strong>, <strong>MMSI / NMEA 2000 instance / IP</strong>, <strong>Location</strong>, <strong>Installed</strong> and <strong>Notes</strong>.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+
+<h3 id="docs">Docs</h3>
+<p>Your boat’s paperwork: insurance, registration, captain’s license, boating safety course and inspections.</p>
+<ol>
+  <li>Tap <strong>Docs</strong>, then <strong>+ Add Document</strong>.</li>
+  <li>Type the <strong>Name</strong> and pick the <strong>Type</strong>: Insurance, Registration, Captain’s license, Boating safety course, Inspection or Other.</li>
+  <li>Fill in <strong>Issued by</strong> and the <strong>Policy/Registration/License Number</strong>. For a license or course, add the <strong>Holder (whose license or certificate)</strong>. For insurance, add the <strong>Coverage (hull value, liability, deductible, cruising area)</strong>.</li>
+  <li>Set the <strong>Issued</strong> and <strong>Expires</strong> dates. The expiration date drives the Docs signal in <a href="#readiness">Boat Readiness</a>.</li>
+  <li>Under <strong>Copy of the document (photo or PDF)</strong>, tap <strong>Take Photo</strong> to photograph the paper, or <strong>Add File</strong> or <strong>Add Photo</strong> to attach one.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+<p>Docs that are expired or about to expire are listed first. Tap a doc and then <strong>Open copy</strong> to show the paper at the dock.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="engine-hours">
+<h2>Engine hours</h2>
+<p>SlipMate keeps a history of hour-meter readings for each engine. An engine’s current hours are its highest reading. Services measured in hours count down from those readings.</p>
+<h3 id="update-hours">Update the hours</h3>
+<ol>
+  <li>Go to <strong>Service</strong> on the bottom bar. The <strong>Vessel Hours</strong> card at the top shows each engine’s hours and when they were last updated.</li>
+  <li>Tap any reading. The <strong>Update hours</strong> box opens with a box for each engine.</li>
+  <li>Type each meter as it reads now. You can leave an engine blank if you didn’t check it.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+<ul>
+  <li>If a reading is lower than the highest one logged, SlipMate asks before saving it.</li>
+  <li>Typed the wrong number? Open the box again and tap <strong>Delete last reading</strong>.</li>
+  <li>You can also tap <strong>Engine hours updated</strong> in Recent Activity on Home to open the box.</li>
+  <li>Trips, maintenance entries and fill-ups have hour-meter boxes too. New maintenance entries and fill-ups start with the current hours filled in. Each one you save adds a reading.</li>
+</ul>
+<h3 id="hours-basis">How a service counts hours</h3>
+<p>Each scheduled service has <strong>Hours based on</strong>:</p>
+<ul>
+  <li><strong>Calendar only:</strong> due every so many months, no hours.</li>
+  <li><strong>All propulsion engines (highest):</strong> counts the highest of your main engines, for one service that covers them all.</li>
+  <li><strong>One engine:</strong> counts just the engine you pick, such as the generator or the port engine.</li>
+</ul>
+<p>A service can have both a months and an hours interval. Whichever comes first is when it’s due. To turn one shared service into one per engine, open it, tap <strong>Edit</strong>, then <strong>Split Into a Separate Task for Each Engine</strong>.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="maintenance">
+<h2>Maintenance</h2>
+<p>Tap <strong>Service</strong> on the bottom bar, or <strong>Maintenance</strong> on Home.</p>
+
+<h3 id="scheduled">Scheduled services</h3>
+<p><strong>Scheduled</strong> lists your recurring services in the order they come due: overdue first, then due soon, then the rest. Each card shows <strong>Next due</strong> and <strong>Last completed</strong>.</p>
+<p><strong>Mark a service done:</strong></p>
+<ol>
+  <li>Tap <strong>Mark done</strong> on the service’s card and confirm. It’s logged as completed today at the current hours, added to Completed maintenance, and the next due date starts over.</li>
+  <li>If the service counts hours and there’s no reading yet, <a href="#update-hours">update the hours</a> first.</li>
+</ol>
+<p>Done on another day? Open the service, tap <strong>Edit</strong>, set <strong>Last done</strong> (and <strong>Hours at last done</strong>), or tap <strong>Log Completed Today</strong> / <strong>Log Completed at Current Hours</strong>, then <strong>Save</strong>.</p>
+<p><strong>Add a service:</strong></p>
+<ol>
+  <li>Tap <strong>+ Add Service</strong>.</li>
+  <li>Type the <strong>Task</strong> and pick the <strong>Component</strong>. For Engine/s or Generator, pick the <strong>Engine</strong> when it counts one engine’s hours.</li>
+  <li>Set <strong>Every</strong> (months), <strong>Every</strong> (hours), or both, and <strong>Hours based on</strong> (see <a href="#hours-basis">How a service counts hours</a>).</li>
+  <li>Add <strong>Last done</strong>, <strong>Hours at last done</strong>, <strong>Performed by</strong> and <strong>Notes (parts, supplier, procedure)</strong>.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+<p>Use the filter button to show one component. A service with no interval shows <strong>No Interval Set</strong> and is never counted as due.</p>
+
+<h3 id="open">Open maintenance</h3>
+<p><strong>Open</strong> is for jobs you’ve found but not fixed yet: a weeping hose clamp, a sticky bilge switch.</p>
+<ol>
+  <li>Tap <strong>Open</strong>, then <strong>+ Add Open Item</strong>.</li>
+  <li>Fill in <strong>Work done</strong> (what needs doing), <strong>Component</strong>, <strong>Performed by</strong>, <strong>Notes</strong> and a <strong>Photo</strong> if it helps. Tap <strong>Save</strong>.</li>
+  <li>When it’s fixed, tap <strong>Mark done</strong> on its card. (Or open it, tap <strong>Edit</strong>, then <strong>Log Completed Today</strong> and <strong>Save</strong>.) It moves to Completed.</li>
+</ol>
+<p>Each card shows when it was <strong>Opened</strong> and how long it has been <strong>Open for</strong>.</p>
+
+<h3 id="completed">Completed maintenance</h3>
+<p><strong>Completed</strong> is your service history, newest first.</p>
+<ol>
+  <li>Tap <strong>Completed</strong>, then <strong>+ Add Entry</strong>.</li>
+  <li>Fill in <strong>Work done</strong>, <strong>Component</strong>, <strong>Engine</strong> (for engine work), <strong>Performed by</strong>, <strong>Status</strong> and <strong>Date completed</strong>.</li>
+  <li>Pick a <strong>Linked schedule task</strong> to reset that service’s last done date.</li>
+  <li>Add <strong>Notes (parts used, invoice #, follow-up)</strong> and a <strong>Photo</strong>. The hour-meter boxes start with the current hours.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+
+<h3 id="review-services">Review Scheduled Services</h3>
+<p>Add a service you skipped in Boat Setup, or remove one, without running setup again.</p>
+<ol>
+  <li>Open <strong>Settings › Boats</strong> and tap <strong>Review Scheduled Services</strong>.</li>
+  <li>Pick a Component to see its services and how many are on your schedule.</li>
+  <li>Tick the ones to add, untick the ones to remove, and set intervals.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+<p>To change your engines or which systems your boat has, run Boat Setup again from Settings › Boats.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="parts">
+<h2>Parts on hand</h2>
+<p>Keep a list of spares aboard and how many you want to carry. Find it under Maintenance › <strong>Parts</strong>.</p>
+<ol>
+  <li>Tap <strong>+ Add Part</strong>.</li>
+  <li>Fill in <strong>Part</strong>, <strong>Part number</strong>, <strong>Component</strong> and <strong>Stored where</strong>.</li>
+  <li>Pick <strong>Units</strong> (Ea, Kit, Set, Pair, Gal, Qt, Box, Misc), then <strong>Qty on hand</strong> and <strong>Qty required</strong> (how many you want aboard).</li>
+  <li>Add <strong>Supplier / brand</strong>, <strong>Specification</strong>, <strong>Product page</strong> (a web link) and <strong>Notes</strong>. Tap <strong>Save</strong>.</li>
+</ol>
+<p>When <strong>Qty on hand</strong> drops below <strong>Qty required</strong>, the part counts as low (or out, at zero) and the Parts signal turns yellow or red. Parts that need restocking are listed first. Used a filter? Edit the part and lower <strong>Qty on hand</strong>. Tap <strong>Product page</strong> on a part to reorder.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="manuals">
+<h2>Manuals</h2>
+<p>Owner’s manuals, parts lists, wiring diagrams and surveys, under Maintenance › <strong>Manuals</strong>.</p>
+<ol>
+  <li>Tap <strong>+ Add Document</strong>.</li>
+  <li>Fill in <strong>Document name</strong> and <strong>Type (manual, parts list, survey…)</strong>.</li>
+  <li>Pick <strong>For engine</strong> if it’s an engine manual, or fill in <strong>Related to (equipment, system…)</strong>.</li>
+  <li>Under <strong>File</strong>, tap <strong>Add File</strong> (a PDF or spreadsheet) or <strong>Add Photo</strong>. Or paste a <strong>Link (Google Drive, Dropbox…)</strong>.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+<p>Tap <strong>Open file</strong> on a manual to read it. Once a file has been opened on your phone, it opens with no signal.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="safety-gear">
+<h2>Safety gear</h2>
+<p>Tap <strong>Safety</strong> on the bottom bar.</p>
+<ol>
+  <li>Tap <strong>+ Add Item</strong>.</li>
+  <li>Fill in <strong>Item</strong> (flares, fire extinguisher, life jackets, EPIRB…), <strong>Quantity</strong> and <strong>Stored where</strong>.</li>
+  <li>Set <strong>Expires / check by</strong>.</li>
+  <li>Tick <strong>Track expiration</strong> if you want a reminder to show until you enter a date.</li>
+  <li>Add <strong>Notes</strong> and tap <strong>Save</strong>.</li>
+</ol>
+<p>Expired gear and gear expiring soon is listed first and turns the Safety signal red or yellow. When you replace an item, edit it and set the new date.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="destinations">
+<h2>Destinations and Places Near Me</h2>
+<p>On Home, tap <strong>Destinations</strong>.</p>
+<h3 id="add-destination">Add a destination</h3>
+<ol>
+  <li>Tap <strong>+ Add New</strong>.</li>
+  <li>Fill in <strong>Name</strong>, <strong>Type</strong> (Marina, Anchorage, Mooring field, Fuel dock, Waterfront restaurant, Pump-out, Boatyard / ramp, Bridge / lock, Other) and <strong>City / waterway</strong>.</li>
+  <li>Add the <strong>Position (Lat/Long)</strong>, <strong>Phone</strong>, <strong>Website</strong>, <strong>Email</strong>, <strong>VHF channel / hail name</strong> and <strong>Depth</strong>.</li>
+  <li>Add what you want to remember: <strong>Hours of Operation</strong>, <strong>Dockage</strong>, <strong>Services</strong>, <strong>Rates and reservations</strong>, <strong>Approach and hazards</strong>, a <strong>Marina map</strong> (file or link) and <strong>My notes (slip #, dock hand, tips)</strong>.</li>
+  <li>Tap <strong>Save</strong>.</li>
+</ol>
+<ul>
+  <li>Tap the star on a card to make it a favorite. Favorites are listed first.</li>
+  <li>Tap a card for its key facts. Tap <strong>More</strong> to see every field, or <strong>Edit</strong> to change it.</li>
+  <li>Type in <strong>Search destinations…</strong> to find one, or use the filter to show one type.</li>
+</ul>
+<h3 id="places">Find Places Near Me</h3>
+<p>Marinas, fuel docks, anchorages and ramps near you, nearest first. Once your state is downloaded, it works with no signal.</p>
+<ol>
+  <li>In Destinations, tap <strong>Find Places Near Me</strong>.</li>
+  <li>Allow location when asked (or tap <strong>Use My Location</strong>).</li>
+  <li>The first time, pick your state under <strong>Download a state</strong> and tap <strong>Download</strong> (needs a signal). Tap <strong>Remove</strong> to delete a state you don’t need.</li>
+  <li>Narrow the list with the kind filter, the distance (<strong>Within</strong> …) or <strong>Search by name or town…</strong>.</li>
+  <li>Tap <strong>Map</strong> to see a place in your maps app, or <strong>Add to My Destinations</strong> to save it, where you can add your own notes.</li>
+</ol>
+<div class="note">Place listings come from OpenStreetMap, made by volunteers, and can be out of date. Always check with the marina for current depths, hours and prices. SlipMate is not a navigation tool.</div>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="float-plans">
+<h2>Float plans and contacts</h2>
+<p>A float plan tells someone ashore where you’re going and when you’ll be back. Find it under Destinations › <strong>Float Plans</strong> (or tap <strong>Trips</strong> on the bottom bar, then <strong>Float Plans</strong>), or tap <strong>New Plan</strong> on Home.</p>
+<h3 id="make-plan">Make a float plan</h3>
+<ol>
+  <li>Tap <strong>+ Add Float Plan</strong>.</li>
+  <li>Type the <strong>Plan title</strong> and, if you like, the <strong>Route and planned stops</strong>.</li>
+  <li>Pick a saved destination under <strong>Leaving from</strong> and <strong>Going to</strong>, or type the <strong>Departure port</strong> and <strong>Destination port</strong>.</li>
+  <li>Set the <strong>Planned departure</strong> and <strong>Expected back</strong> date and time. Both are needed to send the plan.</li>
+  <li>Add the <strong>Captain</strong>, <strong>People aboard</strong> (names, phone numbers, medical needs) and <strong>Notes (vehicle, trailer, keys location, etc)</strong>. Tap <strong>Save</strong>.</li>
+</ol>
+<h3 id="send-plan">Send the plan</h3>
+<ol>
+  <li>Tap the plan, then <strong>Send Plan</strong>.</li>
+  <li>Under <strong>Who is it going to?</strong>, tap a saved contact or <strong>New contact</strong>. For a new contact, type the <strong>Name</strong>, <strong>Phone (for texts)</strong> and <strong>Email (for the full plan with the PDF)</strong>. They’re saved for next time.</li>
+  <li>Optional: turn on <strong>Ask them to call if they have not heard from me</strong> and pick how long after your expected-back time (30 minutes, 1 hour, 2 hours, or type the hours).</li>
+  <li>Tap <strong>Text Message</strong>, <strong>Email With PDF</strong> or <strong>Share PDF</strong>. The PDF adds the boat details, engines, people aboard and safety gear aboard, for your contact to give the Coast Guard if needed.</li>
+  <li>Your phone’s Messages or Mail opens, ready to go. Tap Send there. If SlipMate asks <strong>Did You Send It?</strong>, tap <strong>Sent</strong> or <strong>Not Sent</strong>.</li>
+</ol>
+<p>The plan is now marked Sent. If you allow reminders, your phone reminds you when you’re due back, and again an hour later.</p>
+<div class="note">A text needs cell service and an email needs internet, so send before you leave signal. You send every message yourself: SlipMate does not monitor trips or alert anyone.</div>
+<h3 id="after-plan">While you’re out and when you’re back</h3>
+<ul>
+  <li><strong>Update Return Time:</strong> running late (or early)? Set the <strong>New expected back</strong> time and SlipMate offers to tell your contact.</li>
+  <li><strong>Send All Clear:</strong> tells your contact you’re back safe.</li>
+  <li><strong>Complete Trip:</strong> fill in <strong>Actual departure</strong>, <strong>Actual arrival</strong>, <strong>Distance</strong>, <strong>Fuel added</strong>, the engine hours and notes. The plan moves to your <a href="#trip-log">trip log</a>. For a sent plan, SlipMate offers to send the all clear.</li>
+  <li><strong>Cancel Plan:</strong> removes a plan you didn’t use. For a sent plan you can choose <strong>Cancel and Tell</strong> to let your contact know.</li>
+</ul>
+<h3 id="contacts">Contacts</h3>
+<p>The people you send float plans to, under Destinations › <strong>Contacts</strong>. Tap <strong>+ Add Contact</strong> to add one with <strong>Name</strong>, <strong>Phone (for texts)</strong>, <strong>Email</strong> and <strong>Notes</strong>, or edit one to fix a number.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="trip-log">
+<h2>Trip log</h2>
+<p>Tap <strong>Trips</strong> on the bottom bar. Completed float plans land here too.</p>
+<ol>
+  <li>Tap <strong>+ Add Trip</strong>.</li>
+  <li>Type the <strong>Trip title</strong> and a <strong>Short description</strong>.</li>
+  <li>Pick <strong>Departed from</strong> and <strong>Arrival to</strong> from your saved destinations (this fills in the port and position), or type the <strong>Departure port</strong> and <strong>Arrival port</strong>.</li>
+  <li>Set <strong>Departed</strong> and <strong>Arrived</strong>, and add <strong>Distance</strong> and <strong>Fuel added</strong>.</li>
+  <li>Type each engine’s hour meter when you got back. This adds an engine hours reading.</li>
+  <li>Add <strong>Captain</strong>, <strong>Crew / guests</strong> and <strong>Notes (weather, issues, observations)</strong>. Tap <strong>Save</strong>.</li>
+</ol>
+<p>Each trip card shows the route, date, time underway, hours and distance.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="fuel-log">
+<h2>Fuel log</h2>
+<p>On Home, tap <strong>Fuel</strong>, then <strong>Fuel Log</strong>.</p>
+<ol>
+  <li>Tap <strong>+ Add Fill-Up</strong>.</li>
+  <li>Check the <strong>Date and time</strong>. Pick a <strong>Saved destination</strong>, or type the <strong>Location (marina / fuel dock)</strong> and <strong>City / waterway</strong>.</li>
+  <li>Pick the <strong>Fuel type</strong> and type the <strong>Gallons</strong> (or <strong>Liters</strong>) and <strong>Price per gallon</strong> (or liter).</li>
+  <li>Leave <strong>Total cost</strong> blank and SlipMate works it out, or type the total from the receipt.</li>
+  <li>The hour-meter boxes start with the current hours. Add <strong>Notes (tanks filled, receipt, discounts)</strong> and tap <strong>Save</strong>.</li>
+</ol>
+<p>The charts above the list show your fuel cost this year and the price you paid at each fill-up.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="fuel-efficiency">
+<h2>Fuel efficiency</h2>
+<p>Log how your boat runs at different RPMs to learn its best cruising speed. On Home, tap <strong>Fuel</strong>, then <strong>Fuel Efficiency</strong>.</p>
+<ol>
+  <li>Tap <strong>Add</strong>.</li>
+  <li>Check the <strong>Date and time</strong> and pick the <strong>Sea conditions</strong>.</li>
+  <li>Type the <strong>RPM</strong>, <strong>% Load</strong>, <strong>Speed</strong> and <strong>Fuel Burn (All Engines)</strong>, the total for all engines, from your gauges or engine display.</li>
+  <li>SlipMate shows the economy (MPG, or the unit you chose) as you type.</li>
+  <li>Add <strong>Notes (trim, load, current, fuel on board)</strong> and tap <strong>Save</strong>.</li>
+</ol>
+<p>In the Fuel card at the top, switch between <strong>Chart</strong>, <strong>Table</strong> and <strong>Trend</strong>. The chart dots are colored by sea conditions. Use the filter to show one sea condition. Tap <strong>PDF Report</strong> for the <a href="#fuel-report">Fuel Efficiency report</a>.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="reports">
+<h2>Reports</h2>
+<p>Reports are made on your phone from your records. They work with no signal, and nothing leaves your phone until you share the file.</p>
+
+<h3 id="fuel-report">Fuel Efficiency report</h3>
+<ol>
+  <li>Go to Fuel › <strong>Fuel Efficiency</strong> and tap <strong>PDF Report</strong>.</li>
+  <li>Under <strong>Fuel Efficiency Choices</strong>, choose:
+    <ul>
+      <li><strong>Include what looks worth checking:</strong> a short summary of changes over time. It points at what to look at; it doesn’t diagnose a problem.</li>
+      <li><strong>RPM bands to chart:</strong> tap the bands you want. Each prints a row of three charts (fuel burn, speed and economy over time). The number on each band is how many readings it has.</li>
+      <li><strong>Past readings go back:</strong> the last 3, 6, 12 or 24 months, or all readings.</li>
+    </ul></li>
+  <li>Pick the paper size, <strong>Letter</strong> or <strong>A4</strong>.</li>
+  <li>Tap <strong>Create PDF Report</strong>. Your phone’s share sheet opens: save it, print it or send it.</li>
+</ol>
+<p>Charts, averages and trends use calm-sea readings only. The past readings list shows every reading.</p>
+
+<h3 id="sales-report">Sales / Survey report</h3>
+<p>A tidy report for a buyer or surveyor.</p>
+<ol>
+  <li>Go to Vessel › <strong>Details</strong> and tap <strong>Sales / Survey Report</strong>.</li>
+  <li>Under <strong>What to Include</strong>, turn on the parts you want: <strong>Engines and drivetrain</strong>, <strong>Systems</strong>, <strong>Electronics</strong>, <strong>Safety gear on board</strong>, <strong>Documents on file (names only)</strong>, <strong>Spare parts on hand</strong> and <strong>Fuel efficiency</strong>. The vessel details and capacities are always included.</li>
+  <li>Under <strong>Service History</strong>, decide whether to include <strong>Maintenance schedule and service history</strong>. It’s your call: it can help a sale or hurt it.</li>
+  <li>Under <strong>Privacy</strong>, choose whether to show <strong>Identification numbers</strong> (HIN, registration, MMSI; surveyors usually need the HIN) and <strong>My notes</strong> (off unless you turn it on).</li>
+  <li>Pick <strong>Letter</strong> or <strong>A4</strong> and tap <strong>Create PDF Report</strong>.</li>
+</ol>
+<p>Documents are listed by name only; no files are attached. Your choices start fresh each time, so nothing private goes out by accident.</p>
+
+<h3 id="csv">Spreadsheet (CSV) files</h3>
+<ol>
+  <li>On the Sales / Survey Report screen, scroll to <strong>Spreadsheet (CSV)</strong>.</li>
+  <li>Pick the <strong>Section</strong>: Vessel and capacities, Engines, Systems, Electronics, Safety gear on board, Documents (names only), Service history, Maintenance schedule, Spare parts or Fuel efficiency readings.</li>
+  <li>Tap <strong>Export CSV</strong> and share or save the file. It opens in Excel, Numbers or Google Sheets.</li>
+</ol>
+<p>The CSV follows the same privacy choices as the PDF and uses the units you chose in Settings.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="export">
+<h2>Export all your data</h2>
+<p>Save a complete copy of everything in SlipMate for the boats you own: a spreadsheet (CSV) for every section, plus your manuals, docs and photos in folders, all in one zip file.</p>
+<ol>
+  <li>Open <strong>Settings › Account</strong> and tap <strong>Export All My Data</strong>.</li>
+  <li>Tap <strong>Create Export</strong>. It’s made from the copy on your phone, so it works with no signal. A file you’ve never opened on this phone has to download first, which needs a signal.</li>
+  <li>When the share sheet opens, save the zip somewhere private (Files, iCloud Drive, Google Drive or your computer).</li>
+  <li>Closed the share sheet too soon? Tap <strong>Share Again</strong>; it doesn’t rebuild the export.</li>
+  <li>Tap <strong>Remove Export From This Phone</strong> when you’re done.</li>
+</ol>
+<div class="note">The export holds personal details such as insurance and registration papers and your notes. Keep it somewhere safe. A README inside the zip explains the files and units.</div>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="delete-account">
+<h2>Delete your account</h2>
+<p>Deleting your account permanently deletes your account, every boat you own and all their records and photos. It can’t be undone, so <a href="#export">export your data</a> first.</p>
+<ol>
+  <li>Open <strong>Settings › Account</strong>.</li>
+  <li>Tap the red <strong>Delete Account</strong> link at the bottom right.</li>
+  <li>Read the message and tap <strong>Delete Everything</strong> (or <strong>Cancel</strong>).</li>
+</ol>
+<p>You need a signal for this step. Deleting your account doesn’t cancel a subscription: cancel it in your App Store or Google Play subscriptions too. Can’t get into the app? See <a href="delete-account.html">Delete your account and data</a>.</p>
+<p>Only want to remove one boat? Use <strong>Delete</strong> in <a href="#settings-boats">Settings › Boats</a> instead.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+<section id="help">
+<h2>Getting more help</h2>
+<p>Email <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>. Tell us your phone model and what you were doing, and we’ll get back to you. See also <a href="support.html">Support</a>, the <a href="privacy.html">Privacy Policy</a> and the <a href="terms.html">Terms of Use</a>.</p>
+<a class="top" href="#top">Back to top</a>
+</section>
+
+</div>
+
+<script>
+/* User Guides search: highlights every match on this page, lists the sections they are in, and jumps between them.
+   Runs in the browser only. ?q=word in the address opens the page with that search done (handy for support emails). */
+(function () {
+  var guide = document.getElementById('guide'), input = document.getElementById('guide-q');
+  var prev = document.getElementById('hit-prev'), next = document.getElementById('hit-next');
+  var status = document.getElementById('search-status'), hitsBox = document.getElementById('search-hits');
+  var marks = [], at = -1, timer = null, lastQ = '';
+
+  /* A heading link (#) after every section and topic heading. */
+  guide.querySelectorAll('section[id] > h2, h3[id]').forEach(function (h) {
+    var id = h.id || h.parentNode.id, a = document.createElement('a');
+    a.className = 'anchor'; a.href = '#' + id; a.textContent = '#'; a.setAttribute('aria-label', 'Link to ' + h.textContent);
+    h.appendChild(a);
+  });
+
+  function clear() {
+    marks.forEach(function (m) { var p = m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize(); });
+    marks = []; at = -1; hitsBox.innerHTML = '';
+  }
+  function sectionOf(node) {
+    var el = node.parentNode;
+    while (el && el !== guide) { if (el.tagName === 'H3' && el.id) return el; el = el.parentNode; }
+    /* The nearest topic heading above the match, or its section. */
+    var s = node.parentNode.closest('section'), best = null;
+    if (!s) return null;
+    s.querySelectorAll('h3[id]').forEach(function (h) { if (h.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING) best = h; });
+    return best || s.querySelector('h2');
+  }
+  function search(q) {
+    clear();
+    q = q.trim(); lastQ = q;
+    if (q.length < 2) { status.textContent = q ? 'Type at least 2 letters.' : ''; prev.disabled = next.disabled = true; return; }
+    var needle = q.toLowerCase(), walker = document.createTreeWalker(guide, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { return n.parentNode.closest('script,.anchor') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
+    });
+    var nodes = [], n;
+    while ((n = walker.nextNode())) if (n.nodeValue.toLowerCase().indexOf(needle) !== -1) nodes.push(n);
+    var groups = [];
+    nodes.forEach(function (node) {
+      var text = node.nodeValue, lower = text.toLowerCase(), i = 0, j, frag = document.createDocumentFragment();
+      while ((j = lower.indexOf(needle, i)) !== -1) {
+        frag.appendChild(document.createTextNode(text.slice(i, j)));
+        var m = document.createElement('mark'); m.className = 'hit'; m.textContent = text.slice(j, j + needle.length);
+        frag.appendChild(m); marks.push(m); i = j + needle.length;
+      }
+      frag.appendChild(document.createTextNode(text.slice(i)));
+      var where = sectionOf(node);
+      node.parentNode.replaceChild(frag, node);
+      if (where) {
+        var g = groups.filter(function (x) { return x.h === where; })[0];
+        if (!g) { g = { h: where, n: 0 }; groups.push(g); }
+        g.n += (lower.split(needle).length - 1);
+      }
+    });
+    prev.disabled = next.disabled = marks.length === 0;
+    if (!marks.length) { status.textContent = 'No matches for “' + q + '”. Try a shorter or different word, or browse the contents.'; return; }
+    status.textContent = marks.length + (marks.length === 1 ? ' match' : ' matches') + ' in ' + groups.length + (groups.length === 1 ? ' topic' : ' topics') + '. Press Enter for the next one.';
+    groups.forEach(function (g) {
+      var a = document.createElement('a'), id = g.h.id || g.h.parentNode.id;
+      a.href = '#' + id; a.textContent = g.h.textContent.replace(/#\s*$/, '').trim() + ' (' + g.n + ')';
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var k = marks.findIndex(function (m) { return g.h.compareDocumentPosition(m) & Node.DOCUMENT_POSITION_FOLLOWING; });
+        go(k < 0 ? 0 : k);
+      });
+      hitsBox.appendChild(a);
+    });
+    go(0, true);
+  }
+  function go(k, quiet) {
+    if (!marks.length) return;
+    if (at >= 0 && marks[at]) marks[at].classList.remove('current');
+    at = (k + marks.length) % marks.length;
+    marks[at].classList.add('current');
+    /* Scroll so the match sits a third of the way down the space under the search bar, which stays on screen. */
+    var bar = document.querySelector('.guide-tools').getBoundingClientRect().height, r = marks[at].getBoundingClientRect();
+    window.scrollTo({ top: window.scrollY + r.top - bar - (window.innerHeight - bar) / 3, behavior: quiet ? 'auto' : 'smooth' });
+    if (!quiet) status.textContent = 'Match ' + (at + 1) + ' of ' + marks.length + '.';
+  }
+  input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(function () { search(input.value); }, 250); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); clearTimeout(timer); if (input.value.trim() !== lastQ) search(input.value); else go(at + (e.shiftKey ? -1 : 1)); }
+    if (e.key === 'Escape') { input.value = ''; search(''); }
+  });
+  document.getElementById('guide-search').addEventListener('submit', function (e) { e.preventDefault(); });
+  prev.addEventListener('click', function () { go(at - 1); });
+  next.addEventListener('click', function () { go(at + 1); });
+  var q = new URLSearchParams(location.search).get('q');
+  if (q) { input.value = q; search(q); }
+})();
+</script>

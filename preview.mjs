@@ -13,7 +13,7 @@ const port = Number(process.env.PORT) || 8080;
 execFileSync(process.execPath, [path.join(here, 'build.mjs')], { stdio: 'inherit' });
 
 const types = {
-  '.html': 'text/html; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp',
+  '.html': 'text/html; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
   '.ttf': 'font/ttf', '.txt': 'text/plain; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript',
 };
 
