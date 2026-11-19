@@ -1,2 +1,5 @@
-﻿node_modules/
+node_modules/
 
+
+# Original full-size phone screenshots (may show private details); the web copies live in pages/screenshots/
+/Screenshots/
