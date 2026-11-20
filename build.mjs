@@ -44,6 +44,15 @@ const tokens = {
   googleQr: qrBlock('google', cfg.playStoreUrl, 'Google Play'),
   appleHref: cfg.appStoreUrl || '/',
   googleHref: cfg.playStoreUrl || '/',
+  // Cloudflare Web Analytics: off while the token is blank. When it is set, every page gets Cloudflare's
+  // cookieless beacon and the Privacy Policy gets its "This website" section, so the policy always matches the site.
+  analytics: cfg.cloudflareAnalyticsToken
+    ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${cfg.cloudflareAnalyticsToken}"}'></script>`
+    : '',
+  websitePrivacy: cfg.cloudflareAnalyticsToken
+    ? `<h2>This website</h2>
+<p>This website (underwayapps.com) uses Cloudflare Web Analytics to count visits, such as which pages are viewed and how quickly they load. It doesn’t use cookies, doesn’t store anything on your device, and doesn’t follow you to other websites. Cloudflare receives the basic information any website gets when you visit, such as your IP address, browser type and the page that linked you here; we see only totals. The SlipMate app doesn’t use Cloudflare.</p>`
+    : '',
 };
 // ---- Screenshot slots: {{shot:tour-home|Caption}} in a page ----
 // Shows pages/screenshots/tour-home.webp (or .png / .jpg) when that file exists, and a labeled placeholder box until then.

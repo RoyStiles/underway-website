@@ -36,7 +36,7 @@ GitHub issues are the full written history of changes to the website, same as in
 5. **The store-facing pages must stay online and reachable with no login:** `/privacy.html`, `/support.html`, `/delete-account.html`, `/terms.html`. Never rename or remove them, because the store listings point at them.
 6. **Legal text must match reality.** Any change to `privacy.html` or `terms.html` must still match the Apple privacy labels and the Google Data safety form. Flag it to me instead of quietly rewording, and remind me a lawyer should read it.
 7. **Domain:** `underwayapps.com` is set in GitHub Pages and in `siteUrl` in `config.json`. DNS is at Squarespace (leave the Google email records alone: Support@UnderwayApps.com depends on them). Do not change the domain or DNS without asking me.
-8. **No tracking or third-party calls.** Fonts are hosted here on purpose so visitors' browsers never call Google. Do not add analytics, embeds, or external scripts without asking me.
+8. **No tracking or third-party calls.** Fonts are hosted here on purpose so visitors' browsers never call Google. Do not add analytics, embeds, or external scripts without asking me. The one approved exception is Cloudflare Web Analytics (cookieless), switched on by `cloudflareAnalyticsToken` in `config.json`; when it is on, `privacy.html` shows its "This website" section automatically.
 
 ## Windows notes
 
