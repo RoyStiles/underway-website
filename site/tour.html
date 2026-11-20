@@ -87,25 +87,14 @@ header :focus-visible{outline-color:#fff}
 .pricing .card{max-width:560px}.pricing .card ul{margin:8px 0;padding-left:22px}.pricing .card li{color:var(--text)}
 .tour-end{margin-top:40px;padding-top:28px;border-top:1px solid var(--border)}
 /* User Guides */
-.guide-tools{position:sticky;top:0;z-index:10;background:var(--bg);padding:10px 0;margin:0 0 6px;border-bottom:1px solid var(--border)}
-.guide-search{display:flex;gap:8px;align-items:center}
-.guide-search input{flex:1 1 auto;width:0;min-width:0;font:inherit;font-size:17px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text)}
-.guide-search button{font:600 15px Barlow,system-ui,sans-serif;min-height:44px;padding:0 14px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer}
-.guide-search button:disabled{opacity:.45;cursor:default}
-.search-status{font-size:15px;color:var(--muted);margin:6px 0 0;min-height:1.4em}
-.search-hits{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;max-height:68px;overflow-y:auto}
-.search-hits:empty{display:none}
-.search-hits a{font-size:14px;border:1px solid var(--border);border-radius:999px;padding:3px 10px;text-decoration:none;background:var(--card)}
-mark.hit{background:#FFE58A;color:#16212B;border-radius:3px;padding:0 1px}
-mark.hit.current{background:#F5A623;outline:2px solid #C77C00}
 .toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 18px;margin:16px 0 8px}
 .toc h2{margin:4px 0 6px;font-size:20px}
 .toc ol{margin:0;padding-left:22px;columns:2 260px;column-gap:28px}
 .toc li{margin:3px 0;break-inside:avoid}.toc ol ol{columns:auto;padding-left:18px;font-size:16px}
 .guide h2{font-size:26px;margin:46px 0 8px;padding-top:18px;border-top:1px solid var(--border)}
 .guide h3{font-size:20px;margin:28px 0 6px}
-/* Links to a topic land just under the search bar, which stays at the top of the screen. */
-.guide [id]{scroll-margin-top:96px}
+/* Links to a topic leave a little space above the heading. */
+.guide [id]{scroll-margin-top:12px}
 .guide .anchor{font-size:.75em;margin-left:8px;text-decoration:none;color:var(--muted);opacity:.7}
 .guide .anchor:hover,.guide .anchor:focus{opacity:1;color:var(--accent)}
 .guide ol>li,.guide ul>li{margin:5px 0}

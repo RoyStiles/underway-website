@@ -1,18 +1,7 @@
 <!-- title: User Guides -->
 <!-- description: Step-by-step help for every part of SlipMate, from signing up and adding your boat to reports, exporting your data and deleting your account. -->
 <h1 id="top">User Guides</h1>
-<p class="muted">Step-by-step help for every part of SlipMate. Search for a word below, or pick a topic from the contents. Still stuck? Email <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>.</p>
-
-<div class="guide-tools" role="search">
-  <form class="guide-search" id="guide-search" autocomplete="off">
-    <label for="guide-q" class="sr">Search the guides</label>
-    <input id="guide-q" type="search" placeholder="Search, e.g. hours or units" aria-describedby="search-status">
-    <button type="button" id="hit-prev" disabled aria-label="Previous match">Prev</button>
-    <button type="button" id="hit-next" disabled aria-label="Next match">Next</button>
-  </form>
-  <p class="search-status" id="search-status" aria-live="polite"></p>
-  <div class="search-hits" id="search-hits"></div>
-</div>
+<p class="muted">Step-by-step help for every part of SlipMate. Pick a topic from the contents, and tap Back to top to come back to it. Still stuck? Email <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>.</p>
 
 <nav class="toc" aria-labelledby="toc-title">
   <h2 id="toc-title">Contents</h2>
@@ -658,96 +647,3 @@
 </section>
 
 </div>
-
-<script>
-/* User Guides search: highlights every match on this page, lists the sections they are in, and jumps between them.
-   Runs in the browser only. ?q=word in the address opens the page with that search done (handy for support emails). */
-(function () {
-  var guide = document.getElementById('guide'), input = document.getElementById('guide-q');
-  var prev = document.getElementById('hit-prev'), next = document.getElementById('hit-next');
-  var status = document.getElementById('search-status'), hitsBox = document.getElementById('search-hits');
-  var marks = [], at = -1, timer = null, lastQ = '';
-
-  /* A heading link (#) after every section and topic heading. */
-  guide.querySelectorAll('section[id] > h2, h3[id]').forEach(function (h) {
-    var id = h.id || h.parentNode.id, a = document.createElement('a');
-    a.className = 'anchor'; a.href = '#' + id; a.textContent = '#'; a.setAttribute('aria-label', 'Link to ' + h.textContent);
-    h.appendChild(a);
-  });
-
-  function clear() {
-    marks.forEach(function (m) { var p = m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize(); });
-    marks = []; at = -1; hitsBox.innerHTML = '';
-  }
-  function sectionOf(node) {
-    var el = node.parentNode;
-    while (el && el !== guide) { if (el.tagName === 'H3' && el.id) return el; el = el.parentNode; }
-    /* The nearest topic heading above the match, or its section. */
-    var s = node.parentNode.closest('section'), best = null;
-    if (!s) return null;
-    s.querySelectorAll('h3[id]').forEach(function (h) { if (h.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING) best = h; });
-    return best || s.querySelector('h2');
-  }
-  function search(q) {
-    clear();
-    q = q.trim(); lastQ = q;
-    if (q.length < 2) { status.textContent = q ? 'Type at least 2 letters.' : ''; prev.disabled = next.disabled = true; return; }
-    var needle = q.toLowerCase(), walker = document.createTreeWalker(guide, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (n) { return n.parentNode.closest('script,.anchor') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
-    });
-    var nodes = [], n;
-    while ((n = walker.nextNode())) if (n.nodeValue.toLowerCase().indexOf(needle) !== -1) nodes.push(n);
-    var groups = [];
-    nodes.forEach(function (node) {
-      var text = node.nodeValue, lower = text.toLowerCase(), i = 0, j, frag = document.createDocumentFragment();
-      while ((j = lower.indexOf(needle, i)) !== -1) {
-        frag.appendChild(document.createTextNode(text.slice(i, j)));
-        var m = document.createElement('mark'); m.className = 'hit'; m.textContent = text.slice(j, j + needle.length);
-        frag.appendChild(m); marks.push(m); i = j + needle.length;
-      }
-      frag.appendChild(document.createTextNode(text.slice(i)));
-      var where = sectionOf(node);
-      node.parentNode.replaceChild(frag, node);
-      if (where) {
-        var g = groups.filter(function (x) { return x.h === where; })[0];
-        if (!g) { g = { h: where, n: 0 }; groups.push(g); }
-        g.n += (lower.split(needle).length - 1);
-      }
-    });
-    prev.disabled = next.disabled = marks.length === 0;
-    if (!marks.length) { status.textContent = 'No matches for “' + q + '”. Try a shorter or different word, or browse the contents.'; return; }
-    status.textContent = marks.length + (marks.length === 1 ? ' match' : ' matches') + ' in ' + groups.length + (groups.length === 1 ? ' topic' : ' topics') + '. Press Enter for the next one.';
-    groups.forEach(function (g) {
-      var a = document.createElement('a'), id = g.h.id || g.h.parentNode.id;
-      a.href = '#' + id; a.textContent = g.h.textContent.replace(/#\s*$/, '').trim() + ' (' + g.n + ')';
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        var k = marks.findIndex(function (m) { return g.h.compareDocumentPosition(m) & Node.DOCUMENT_POSITION_FOLLOWING; });
-        go(k < 0 ? 0 : k);
-      });
-      hitsBox.appendChild(a);
-    });
-    go(0, true);
-  }
-  function go(k, quiet) {
-    if (!marks.length) return;
-    if (at >= 0 && marks[at]) marks[at].classList.remove('current');
-    at = (k + marks.length) % marks.length;
-    marks[at].classList.add('current');
-    /* Scroll so the match sits a third of the way down the space under the search bar, which stays on screen. */
-    var bar = document.querySelector('.guide-tools').getBoundingClientRect().height, r = marks[at].getBoundingClientRect();
-    window.scrollTo({ top: window.scrollY + r.top - bar - (window.innerHeight - bar) / 3, behavior: quiet ? 'auto' : 'smooth' });
-    if (!quiet) status.textContent = 'Match ' + (at + 1) + ' of ' + marks.length + '.';
-  }
-  input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(function () { search(input.value); }, 250); });
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') { e.preventDefault(); clearTimeout(timer); if (input.value.trim() !== lastQ) search(input.value); else go(at + (e.shiftKey ? -1 : 1)); }
-    if (e.key === 'Escape') { input.value = ''; search(''); }
-  });
-  document.getElementById('guide-search').addEventListener('submit', function (e) { e.preventDefault(); });
-  prev.addEventListener('click', function () { go(at - 1); });
-  next.addEventListener('click', function () { go(at + 1); });
-  var q = new URLSearchParams(location.search).get('q');
-  if (q) { input.value = q; search(q); }
-})();
-</script>
