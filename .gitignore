@@ -3,3 +3,6 @@ node_modules/
 
 # Original full-size phone screenshots (may show private details); the web copies live in pages/screenshots/
 /Screenshots/
+
+# Draft articles kept on the PC only (their text lives in pages/)
+guide-*.md

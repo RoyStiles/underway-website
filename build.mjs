@@ -103,7 +103,15 @@ for (const f of fs.readdirSync(pagesDir)) {
   const page = layout
     .replaceAll('{{canonicalUrl}}', canonical)
     .replace('{{robotsMeta}}', noindex ? `<meta name="robots" content="${meta.robots}">\n` : '')
-    .replace('{{structuredData}}', f === 'index.html' ? `<script type="application/ld+json">${JSON.stringify(appData)}</script>` : '')
+    .replace('{{structuredData}}', () => {
+      // Home page: the app. Pages marked <!-- type: article --> (the Boating Guides): an Article by UnderwayApps LLC.
+      const org = { '@type': 'Organization', name: cfg.ownerName, url: `${site}/` };
+      const data = f === 'index.html' ? appData
+        : meta.type === 'article' ? { '@context': 'https://schema.org', '@type': 'Article', headline: meta.title, description: meta.description,
+          url: canonical, mainEntityOfPage: canonical, image: `${site}/share.png`, author: org, publisher: { ...org, logo: { '@type': 'ImageObject', url: `${site}/icon.png` } } }
+        : null;
+      return data ? `<script type="application/ld+json">${JSON.stringify(data)}</script>` : '';
+    })
     .replaceAll('{{pageTitle}}', meta.title ? `${meta.title} · SlipMate` : 'SlipMate: Your boat. Always ready. Wherever you are.')
     .replaceAll('{{pageDescription}}', meta.description ?? 'Service, parts, safety gear, fuel, trips and documents in one place, even with no signal.')
     .replace('{{bodyClass}}', meta.body ?? '')
