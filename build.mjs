@@ -72,6 +72,23 @@ const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (_, k) => (k in tokens ? String(
 
 // ---- Pages ----
 const layout = fs.readFileSync(path.join(pagesDir, '_layout.html'), 'utf8');
+const site = cfg.siteUrl.replace(/\/$/, '');
+const sitemapUrls = [];
+// What Google reads about the app (home page only). Store links are added once they are set in config.json.
+const stores = [cfg.appStoreUrl, cfg.playStoreUrl].filter(Boolean);
+const appData = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'SlipMate',
+  description: 'Service, parts, safety gear, fuel, trips and documents in one place, even with no signal.',
+  applicationCategory: 'LifestyleApplication',
+  operatingSystem: 'iOS, Android',
+  url: `${site}/`,
+  image: `${site}/icon.png`,
+  screenshot: `${site}/screenshots/tour-home.png`,
+  publisher: { '@type': 'Organization', name: cfg.ownerName, url: `${site}/`, email: cfg.supportEmail },
+  ...(stores.length ? { downloadUrl: stores.length === 1 ? stores[0] : stores } : {}),
+};
 for (const f of fs.readdirSync(pagesDir)) {
   const src = path.join(pagesDir, f);
   if (f === '_layout.html') continue;
@@ -79,7 +96,14 @@ for (const f of fs.readdirSync(pagesDir)) {
   let body = fs.readFileSync(src, 'utf8');
   const meta = {};
   body = body.replace(/^<!--\s*(\w+):\s*(.*?)\s*-->\s*/gm, (_, k, v) => { meta[k] = v; return ''; });
+  // The official web address of this page. Pages marked <!-- robots: noindex --> stay online but out of search and the sitemap.
+  const canonical = f === 'index.html' ? `${site}/` : `${site}/${f}`;
+  const noindex = /noindex/.test(meta.robots ?? '');
+  if (!noindex) sitemapUrls.push(canonical);
   const page = layout
+    .replaceAll('{{canonicalUrl}}', canonical)
+    .replace('{{robotsMeta}}', noindex ? `<meta name="robots" content="${meta.robots}">\n` : '')
+    .replace('{{structuredData}}', f === 'index.html' ? `<script type="application/ld+json">${JSON.stringify(appData)}</script>` : '')
     .replaceAll('{{pageTitle}}', meta.title ? `${meta.title} · SlipMate` : 'SlipMate: Your boat. Always ready. Wherever you are.')
     .replaceAll('{{pageDescription}}', meta.description ?? 'Service, parts, safety gear, fuel, trips and documents in one place, even with no signal.')
     .replace('{{bodyClass}}', meta.body ?? '')
@@ -88,7 +112,10 @@ for (const f of fs.readdirSync(pagesDir)) {
 }
 
 // Host helper files
-fs.writeFileSync(path.join(out, 'robots.txt'), 'User-agent: *\nAllow: /\n');
+fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site}/sitemap.xml\n`);
+sitemapUrls.sort((a, b) => (a === `${site}/` ? -1 : b === `${site}/` ? 1 : a.localeCompare(b)));
+fs.writeFileSync(path.join(out, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`);
 const leftover = [...fs.readdirSync(out)].filter((f) => f.endsWith('.html'))
   .flatMap((f) => (fs.readFileSync(path.join(out, f), 'utf8').match(/\{\{\w+\}\}/g) ?? []).map((t) => `${f}: ${t}`));
 if (leftover.length) warn.push(`Unfilled tokens: ${leftover.join(', ')}`);

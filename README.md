@@ -6,6 +6,12 @@ Plain HTML pages for the store listings: home (store buttons + QR codes), Tour t
 Each section of `pages/tour.html` has a slot such as `{{shot:tour-home|caption}}`. Until a picture is added it shows a dashed "Screenshot coming soon" box with the file name it is waiting for.
 To add one: save the phone screenshot as `pages/screenshots/<slot name>.webp` (`.png` or `.jpg` also work), for example `pages/screenshots/tour-home.webp`, then run `npm run build`. The build lists the slots still waiting. The slots are: tour-home, tour-offline, tour-setup, tour-vessel, tour-hours, tour-maintenance, tour-parts, tour-safety, tour-float-plan, tour-destinations, tour-fuel, tour-export. The same `{{shot:...}}` slot works on any page.
 
+## Search engines and link previews
+- The build writes `site/sitemap.xml` (every page, for Google) and points `robots.txt` at it. Each page gets a canonical link (its one official web address).
+- To keep a page online but out of search results and the sitemap, put `<!-- robots: noindex -->` at the top of it (the Delete account page has this).
+- The home page carries a short SoftwareApplication description for Google, built in `build.mjs`. The store links are added to it automatically once they are set in `config.json`.
+- `pages/share.png` (1200×630) is the picture shown when someone shares a link. Its layout is `share-image.html`. To remake it, open that file in Chrome with the window at 1200×630 and take a screenshot, or ask Claude.
+
 ## See it on your PC
 In PowerShell: `cd G:\Underway\underway-website`, then `npm run preview`, then open http://localhost:8080 in your browser. It rebuilds first, so after editing `pages/` or `config.json`, stop it (Ctrl+C) and run it again.
 
