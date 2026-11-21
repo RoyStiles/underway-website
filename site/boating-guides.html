@@ -183,6 +183,12 @@ th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-a
 footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px}
 footer div{max-width:880px;margin:0 auto;padding:18px 16px;display:flex;gap:16px;flex-wrap:wrap}
 footer .sp{margin-right:auto}
+footer div{align-items:center}
+footer .social{display:inline-flex;gap:6px;margin-left:4px}
+footer .social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;color:var(--muted)}
+footer .social a:hover,footer .social a:focus-visible{color:var(--accent);background:var(--card)}
+footer .social svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9}
+footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 </style>
 </head>
 <body class="">
@@ -221,7 +227,7 @@ footer .sp{margin-right:auto}
 </main>
 <footer><div>
   <span class="sp">© 2026 UnderwayApps LLC</span>
-  <a href="tour.html">Tour the App</a><a href="user-guides.html">User Guides</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a>
+  <a href="tour.html">Tour the App</a><a href="user-guides.html">User Guides</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a><span class="social"><a href="https://www.instagram.com/underwayapps/" rel="me noopener" target="_blank" aria-label="SlipMate on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="dot"/></svg></a><a href="https://www.facebook.com/profile.php?id=61596876204786" rel="me noopener" target="_blank" aria-label="SlipMate on Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14c-2.2 0-3.5 1.5-3.5 3.6V11H8v3.5h2.5V21h3.6v-6.5h2.4l.5-3.5h-2.9V9.2c0-.4.3-.7.7-.7z" class="fill"/></svg></a></span>
 </div></footer>
 <script>
 /* Site menu: the button opens and closes it; Escape, a click outside, tabbing away or picking a link closes it. The page you are on is marked. */

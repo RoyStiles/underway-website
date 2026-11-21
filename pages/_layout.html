@@ -183,6 +183,12 @@ th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-a
 footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px}
 footer div{max-width:880px;margin:0 auto;padding:18px 16px;display:flex;gap:16px;flex-wrap:wrap}
 footer .sp{margin-right:auto}
+footer div{align-items:center}
+footer .social{display:inline-flex;gap:6px;margin-left:4px}
+footer .social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;color:var(--muted)}
+footer .social a:hover,footer .social a:focus-visible{color:var(--accent);background:var(--card)}
+footer .social svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9}
+footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 </style>
 </head>
 <body class="{{bodyClass}}">
@@ -212,7 +218,7 @@ footer .sp{margin-right:auto}
 </main>
 <footer><div>
   <span class="sp">© {{year}} {{ownerName}}</span>
-  <a href="tour.html">Tour the App</a><a href="user-guides.html">User Guides</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a>
+  <a href="tour.html">Tour the App</a><a href="user-guides.html">User Guides</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a>{{socialLinks}}
 </div></footer>
 <script>
 /* Site menu: the button opens and closes it; Escape, a click outside, tabbing away or picking a link closes it. The page you are on is marked. */

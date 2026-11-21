@@ -35,8 +35,20 @@ const qrBlock = (key, url, label) => url
   ? `<figure class="qr"><img src="qr/${key}.svg" alt="QR code for ${label}" width="160" height="160"><figcaption>Scan for ${label}</figcaption></figure>`
   : `<figure class="qr off"><div class="qrbox">QR code appears here once the app is live</div><figcaption>${label}</figcaption></figure>`;
 
+// ---- Social links (Instagram, Facebook): plain links only, nothing loads from those sites. Blank in config.json = not shown. ----
+const socials = [
+  { name: 'Instagram', url: cfg.instagramUrl, icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="dot"/></svg>' },
+  { name: 'Facebook', url: cfg.facebookUrl, icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14c-2.2 0-3.5 1.5-3.5 3.6V11H8v3.5h2.5V21h3.6v-6.5h2.4l.5-3.5h-2.9V9.2c0-.4.3-.7.7-.7z" class="fill"/></svg>' },
+].filter((s) => s.url);
+const socialAttrs = (s) => `href="${s.url.replace(/&/g, '&amp;')}" rel="me noopener" target="_blank"`;
 const tokens = {
   ...cfg,
+  socialLinks: socials.length
+    ? `<span class="social">${socials.map((s) => `<a ${socialAttrs(s)} aria-label="SlipMate on ${s.name}" title="${s.name}">${s.icon}</a>`).join('')}</span>`
+    : '',
+  socialFollow: socials.length
+    ? `<h2>Follow SlipMate</h2>\n<p>News, tips and new features: ${socials.map((s) => `<a ${socialAttrs(s)}>${s.name}</a>`).join(' and ')}.</p>`
+    : '',
   year: new Date().getFullYear(),
   appleBadge: badge(cfg.appStoreUrl, 'App Store', 'apple'),
   googleBadge: badge(cfg.playStoreUrl, 'Google Play', 'google'),
@@ -86,7 +98,7 @@ const appData = {
   url: `${site}/`,
   image: `${site}/icon.png`,
   screenshot: `${site}/screenshots/tour-home.png`,
-  publisher: { '@type': 'Organization', name: cfg.ownerName, url: `${site}/`, email: cfg.supportEmail },
+  publisher: { '@type': 'Organization', name: cfg.ownerName, url: `${site}/`, email: cfg.supportEmail, ...(socials.length ? { sameAs: socials.map((s) => s.url) } : {}) },
   ...(stores.length ? { downloadUrl: stores.length === 1 ? stores[0] : stores } : {}),
 };
 for (const f of fs.readdirSync(pagesDir)) {
@@ -105,7 +117,7 @@ for (const f of fs.readdirSync(pagesDir)) {
     .replace('{{robotsMeta}}', noindex ? `<meta name="robots" content="${meta.robots}">\n` : '')
     .replace('{{structuredData}}', () => {
       // Home page: the app. Pages marked <!-- type: article --> (the Boating Guides): an Article by UnderwayApps LLC.
-      const org = { '@type': 'Organization', name: cfg.ownerName, url: `${site}/` };
+      const org = { '@type': 'Organization', name: cfg.ownerName, url: `${site}/`, ...(socials.length ? { sameAs: socials.map((s) => s.url) } : {}) };
       const data = f === 'index.html' ? appData
         : meta.type === 'article' ? { '@context': 'https://schema.org', '@type': 'Article', headline: meta.title, description: meta.description,
           url: canonical, mainEntityOfPage: canonical, image: `${site}/share.png`, author: org, publisher: { ...org, logo: { '@type': 'ImageObject', url: `${site}/icon.png` } } }
