@@ -400,8 +400,8 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 <p>Kept your boat in Excel, Numbers or Google Sheets? SlipMate can bring it in instead of you typing it again: boat specs and capacities, engines, the maintenance schedule, service history, parts, safety gear, and systems and electronics. For tips on getting a spreadsheet ready, see <a href="boat-maintenance-spreadsheet.html">Keeping your boat in a spreadsheet</a>.</p>
 <ol>
   <li>Save or download your spreadsheet as <strong>.xlsx</strong> or <strong>.csv</strong> and put it on your phone (in Files, Google Drive, or an email to yourself). Older .xls files need saving as .xlsx first.</li>
-  <li>Open the import: tap <strong>Have a spreadsheet? Import it</strong> on the <strong>Set up your boat</strong> card on Home, or <strong>Import From a Spreadsheet</strong> in <a href="#settings-account">Settings › Account</a>.</li>
-  <li>Tap <strong>Choose Spreadsheet</strong> and pick your file (see <a href="#import-find-file">Finding your file</a> if it’s in Google Drive or you can’t see it).</li>
+  <li>Open the import: tap <strong>Have a spreadsheet? Import it</strong> on the <strong>Set up your boat</strong> card on Home, or <strong>Import a Spreadsheet Into</strong> your boat in <a href="#settings-boats">Settings › Boats</a>. The import fills the boat you’re in, so switch boats there first if you have two.</li>
+  <li>Tap <strong>Choose Spreadsheet</strong> and pick your file (see <a href="#import-find-file">Finding your file</a> if it’s in Google Drive or you can’t see it). Or, for a file in Google Drive or a Google Sheet, paste its link under <strong>Or Paste A Google Drive Link</strong> and tap <strong>Open Link</strong> (see <a href="#import-drive-link">Importing from a Google Drive link</a>).</li>
   <li><strong>Check The Columns:</strong> SlipMate guesses what each tab holds (Boat, Engines, Schedule, History, Parts, Safety or Systems) and which SlipMate field each column goes in, with an example from your sheet beside it. Tap any guess to change it. A column that doesn’t fit can go <strong>Add to notes</strong> or <strong>Don’t import</strong>. Tap <strong>Preview</strong>.</li>
   <li><strong>Preview:</strong> every row is sorted into <strong>Ready</strong>, <strong>Needs a look</strong> (it comes in, with a note on what’s missing) and <strong>Skipped</strong> (with the reason, such as a row with no name, or something already in SlipMate). Nothing is saved yet. Tap <strong>Back</strong> to change a match.</li>
   <li>Tap <strong>Import</strong>. The summary shows what came in.</li>
@@ -426,6 +426,14 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
   <li><strong>Android:</strong> in the Google Drive app, tap <strong>⋮</strong> next to the file, then <strong>Download</strong>. In SlipMate’s picker, it’s under <strong>Downloads</strong>.</li>
 </ul>
 <p>A file emailed to yourself works the same way: save the attachment to Files (iPhone) or Downloads (Android), then pick it in SlipMate.</p>
+<p id="import-drive-link"><strong>Importing from a Google Drive link.</strong> This skips the file picker, so the Google Drive messages above don’t come up. It also works with a Google Sheet as it is, with no need to save it as .xlsx. It needs a signal.</p>
+<ol>
+  <li>In Google Drive (on your phone or computer), open <strong>Share</strong> for the spreadsheet. Under <strong>General access</strong>, choose <strong>Anyone with the link</strong>, then tap <strong>Copy link</strong>. Use the link to the file itself, not to the folder it’s in.</li>
+  <li>In SlipMate’s import, paste it under <strong>Or Paste A Google Drive Link</strong> and tap <strong>Open Link</strong>. You go on to <strong>Check The Columns</strong> as usual.</li>
+  <li>When the import is finished, go back to <strong>Share</strong> in Google Drive and set <strong>General access</strong> to <strong>Restricted</strong> again. SlipMate reminds you on the summary.</li>
+</ol>
+<div class="note">While link sharing is on, anyone who has the link can open your spreadsheet, including your HIN, registration and service history. Turn it off once the import is done. SlipMate never signs in to your Google account, which is why the file has to be shared by link. If you’d rather not share it at all, save a copy on your phone and use <strong>Choose Spreadsheet</strong>.</div>
+<p>“Google Drive did not send the file” means the file isn’t shared as <strong>Anyone with the link</strong> yet, or the link is to something else. Check the sharing and copy the link again.</p>
 <p><strong>No spreadsheet yet, or want the closest match?</strong> Tap <strong>Get The Template</strong> on the first screen. It shares a blank .xlsx with one tab for each list and SlipMate’s column names, to fill in on your computer.</p>
 <p><strong>How your sheet is read:</strong></p>
 <ul>
@@ -534,7 +542,6 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
   <li><strong>Plan:</strong> one yearly subscription that includes up to two boats and every feature, with a 30-day free trial. Starting the trial from inside the app is coming soon.</li>
   <li><strong>Sign Out:</strong> if some changes haven’t synced yet, SlipMate warns you first, because they would be lost. Choose <strong>Stay Signed In</strong> and sync, or <strong>Sign Out Anyway</strong>.</li>
   <li><strong>Export All My Data:</strong> see <a href="#export">Export all your data</a>.</li>
-  <li><strong>Import From a Spreadsheet:</strong> see <a href="#import">Import from a spreadsheet</a>.</li>
   <li><strong>Delete Account:</strong> see <a href="#delete-account">Delete your account</a>.</li>
 </ul>
 
@@ -544,6 +551,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
   <li><strong>Add another boat:</strong> type its name in <strong>Add another boat</strong> and tap <strong>Add Boat</strong>. One subscription includes up to 2 boats.</li>
   <li><strong>Run boat setup again for</strong> your boat: reruns <a href="#boat-setup">Boat Setup</a> for the boat you’re in.</li>
   <li><strong>Review Scheduled Services:</strong> see <a href="#review-services">Review Scheduled Services</a>.</li>
+  <li><strong>Import a Spreadsheet Into</strong> your boat: brings records from an .xlsx, .csv or Google Drive link into the boat you’re in. See <a href="#import">Import from a spreadsheet</a>.</li>
   <li><strong>Delete</strong> your boat (red button, for the boat’s owner): four questions in a row make sure you mean it. <strong>Are You Sure?</strong>, <strong>This Is Not Reversible</strong>, <strong>Have You Exported Your Data?</strong> (tap <strong>Export First</strong> to save a copy) and <strong>Last Chance</strong>. Tap <strong>Delete Boat</strong> to finish. The boat and all its records are removed from every phone, and it frees up a boat on your subscription.</li>
 </ul>
 
