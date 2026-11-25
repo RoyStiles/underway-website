@@ -10,16 +10,23 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: true
+# Two jobs, as in GitHub's own Pages template: the site is packaged in "build", and "deploy" starts only once that
+# job has finished, so the package is registered before deploy looks for it. (In one job, deploy looked for it under
+# a second after upload and kept failing with "No artifacts named github-pages".)
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v5
