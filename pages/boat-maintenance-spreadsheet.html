@@ -1,0 +1,75 @@
+<!-- title: Boat Maintenance Spreadsheet: How to Set It Up and Move It to an App -->
+<!-- description: How to lay out a boat maintenance spreadsheet that works: the tabs and columns to use, how to write intervals and dates, and how to clean it up before moving it into an app. -->
+<!-- type: article -->
+<article class="article">
+<p class="crumbs"><a href="boating-guides.html">Boating Guides</a></p>
+<h1>Keeping Your Boat in a Spreadsheet, and Moving It to an App</h1>
+<p>Many owners have kept their boat in a spreadsheet for years: a list of jobs, the date and hours they were done, the parts they bought and when the flares expire. A good spreadsheet is a fine record. A messy one hides the things you most need to know, such as which service is overdue.</p>
+<p>This guide shows a layout that works, the small habits that keep it useful, and how to tidy it up if you decide to move it into an app.</p>
+
+<h2 id="step-1-one-tab-for-each-kind-of-list">Step 1: Use one tab for each kind of list</h2>
+<p>Mixing everything on one sheet is where most spreadsheets go wrong. Give each kind of information its own tab:</p>
+<ul>
+  <li><strong>Boat:</strong> the specs, as two columns: a label and its value (LOA, beam, draft, HIN, registration, tank sizes).</li>
+  <li><strong>Engines:</strong> one row per engine and generator: position (Port, Starboard, Generator), make and model, serial number and current hours.</li>
+  <li><strong>Schedule:</strong> one row per recurring job: what it is, how often, and when it was last done.</li>
+  <li><strong>History:</strong> one row per job done: the date, what was done, the engine hours and who did it.</li>
+  <li><strong>Parts:</strong> one row per spare: name, part number, how many you have, and where it is stored.</li>
+  <li><strong>Safety:</strong> one row per item: how many, where it is, and when it expires.</li>
+  <li><strong>Systems:</strong> installed equipment and electronics, with make, model and serial number.</li>
+</ul>
+<p>Put the column headings in the first row of each tab, and nothing above them.</p>
+
+<h2 id="step-2-keep-the-schedule-and-the-history-apart">Step 2: Keep the schedule and the history apart</h2>
+<p>The schedule says what should happen. The history says what did happen. When they are mixed, an old row looks like a job still to do, and a job still to do looks finished.</p>
+<p>When you finish a job, add a row to the history, then update the job’s <em>Last done</em> date and hours on the schedule. Use the same name in both places (“Oil and filter change”, not “oil chg” in one and “Oil service” in the other), so you can always match them up.</p>
+
+<h2 id="step-3-write-intervals-a-way-that-can-be-counted">Step 3: Write intervals in a way that can be counted</h2>
+<p>An interval is only useful if you can tell when it comes due. Write it as a number with a unit:</p>
+<ul>
+  <li>“100 hours”, “12 months” or “2 years”</li>
+  <li>“100 hours or 12 months” when it is whichever comes first, as most engine makers specify</li>
+</ul>
+<p>Avoid intervals like “seasonal”, “as needed” or “when it looks worn”. They are fine as notes, but they never come due, so the job is easy to forget. If a job is really done every spring, write “12 months”.</p>
+<p>A clean layout uses two columns, <em>Every (hours)</em> and <em>Every (months)</em>, so each one holds a plain number.</p>
+
+<h2 id="step-4-make-every-date-a-full-date">Step 4: Make every date a full date</h2>
+<p>A due date can only be worked out from a full date. “Spring 2024” or “2023” cannot tell you whether a job is due next week or next year.</p>
+<ul>
+  <li>Use the spreadsheet’s own date format, so the cell holds a real date and not text.</li>
+  <li>Pick one style and keep to it. In the US, 3/4/2025 means March 4; in much of the world it means 3 April. Writing 2025-03-04 removes any doubt.</li>
+  <li>If you only know the month, pick a day and say so in the notes (“about mid-May”).</li>
+</ul>
+
+<h2 id="step-5-log-engine-hours-every-time">Step 5: Log engine hours every time</h2>
+<p>Most engine jobs are due by hours as well as by the calendar. Each history row for engine work should have the hour-meter reading and say which engine it was for, on a boat with more than one. Without the hours, an oil change every 100 hours can only be guessed.</p>
+<p>Keep the current hours for each engine up to date on the Engines tab, too.</p>
+
+<h2 id="step-6-keep-units-and-numbers-plain">Step 6: Keep units and numbers plain</h2>
+<ul>
+  <li>Put the unit in the column heading, such as <em>Fuel (gal)</em> or <em>LOA (ft)</em>, and only the number in each cell.</li>
+  <li>Use one unit per column. A tank in liters on one row and gallons on the next is an easy way to order the wrong amount of fuel.</li>
+  <li>Leave a cell blank rather than writing “n/a”, “?” or “TBD”.</li>
+</ul>
+
+<h2 id="step-7-tidy-up-before-you-move-it">Step 7: Tidy up before you move it to an app</h2>
+<p>If you are moving your records into an app, a short clean-up first saves time afterwards:</p>
+<ol>
+  <li>Split any one-sheet record into the tabs above.</li>
+  <li>Make sure every row has a name in its first column. Rows with no name usually cannot be brought in.</li>
+  <li>Give every scheduled job an interval, and a last-done date if you know it.</li>
+  <li>Use the same engine names everywhere (Port, Starboard, Generator), matching the Engines tab.</li>
+  <li>Remove duplicate rows, totals and notes typed between the rows.</li>
+  <li>Save the file as <strong>.xlsx</strong> or <strong>.csv</strong>. Excel, Numbers and Google Sheets can all do this.</li>
+  <li>Keep a copy of the original, just in case.</li>
+</ol>
+<p>Don’t worry about filling every gap. A few blank serial numbers do no harm. The things worth fixing are the ones that drive due dates: intervals, last-done dates and engine hours.</p>
+
+<div class="card cta" id="bringing-it-into-slipmate">
+<h2>Bringing it into SlipMate</h2>
+<p>SlipMate can import your spreadsheet: boat specs, engines, maintenance schedule, service history, parts, safety gear and systems, from an .xlsx or .csv. It matches your own column names, shows a preview of what will come in and what needs a look, and only fills boat details that are still blank. It can also give you a blank template with the tabs above. See <a href="user-guides.html#import">Import from a spreadsheet</a> in the User Guides.</p>
+<p>After that, SlipMate keeps your service, parts, safety gear, fuel, trips and documents in one place, even with no signal.</p>
+</div>
+<p class="muted small fine">This guide is general information. It is not a substitute for your engine maker’s manual or a qualified marine mechanic. Always use the service intervals your manuals give for your exact engines and equipment.</p>
+<p class="more">More <a href="boating-guides.html">guides for boat owners</a>.</p>
+</article>

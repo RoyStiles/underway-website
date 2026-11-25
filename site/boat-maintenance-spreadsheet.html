@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boat Maintenance Spreadsheet: How to Set It Up and Move It to an App · SlipMate</title>
+<meta name="description" content="How to lay out a boat maintenance spreadsheet that works: the tabs and columns to use, how to write intervals and dates, and how to clean it up before moving it into an app.">
+<link rel="canonical" href="https://underwayapps.com/boat-maintenance-spreadsheet.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SlipMate">
+<meta property="og:url" content="https://underwayapps.com/boat-maintenance-spreadsheet.html">
+<meta property="og:title" content="Boat Maintenance Spreadsheet: How to Set It Up and Move It to an App · SlipMate">
+<meta property="og:description" content="How to lay out a boat maintenance spreadsheet that works: the tabs and columns to use, how to write intervals and dates, and how to clean it up before moving it into an app.">
+<meta property="og:image" content="https://underwayapps.com/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SlipMate: Your boat. Always ready. Wherever you are.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boat Maintenance Spreadsheet: How to Set It Up and Move It to an App · SlipMate">
+<meta name="twitter:description" content="How to lay out a boat maintenance spreadsheet that works: the tabs and columns to use, how to write intervals and dates, and how to clean it up before moving it into an app.">
+<meta name="twitter:image" content="https://underwayapps.com/share.png">
+<meta name="twitter:image:alt" content="SlipMate: Your boat. Always ready. Wherever you are.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Boat Maintenance Spreadsheet: How to Set It Up and Move It to an App","description":"How to lay out a boat maintenance spreadsheet that works: the tabs and columns to use, how to write intervals and dates, and how to clean it up before moving it into an app.","url":"https://underwayapps.com/boat-maintenance-spreadsheet.html","mainEntityOfPage":"https://underwayapps.com/boat-maintenance-spreadsheet.html","image":"https://underwayapps.com/share.png","author":{"@type":"Organization","name":"UnderwayApps LLC","url":"https://underwayapps.com/","sameAs":["https://www.instagram.com/underwayapps/","https://www.facebook.com/profile.php?id=61596876204786"]},"publisher":{"@type":"Organization","name":"UnderwayApps LLC","url":"https://underwayapps.com/","sameAs":["https://www.instagram.com/underwayapps/","https://www.facebook.com/profile.php?id=61596876204786"],"logo":{"@type":"ImageObject","url":"https://underwayapps.com/icon.png"}}}</script>
+<link rel="icon" href="icon.png">
+<link rel="preload" href="fonts/Knewave_400Regular.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+/* Same fonts as the app: Knewave for the SlipMate name, Barlow for text. Hosted here so visitors' browsers never call Google. */
+@font-face{font-family:Knewave;src:url(fonts/Knewave_400Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Barlow;src:url(fonts/Barlow_400Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:Barlow;src:url(fonts/Barlow_600SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:Barlow;src:url(fonts/Barlow_700Bold.ttf) format("truetype");font-weight:700 900;font-display:swap}
+.wordmark{font-family:Knewave,"Segoe Script",cursive;font-weight:400}
+:root{--bg:#F6F1E8;--card:#fff;--text:#16212B;--muted:#4F5B66;--accent:#1E6FA8;--ok:#2B7352;--border:#D9D2C6;--head:#4E6A8F;--onhead:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#111B24;--card:#1A2633;--text:#E6EBF1;--muted:#9AA8B6;--accent:#6BB8DE;--ok:#5FC08F;--border:#2B3A4A;--head:#1A2633;--onhead:#E6EBF1}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:18px/1.55 Barlow,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+header{background:var(--head);color:var(--onhead)}
+.bar{max-width:880px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bar a{color:var(--onhead);text-decoration:none}
+.brand{display:flex;align-items:center;gap:10px;font-size:26px;margin-right:auto}
+.brand img{width:36px;height:36px;border-radius:9px}
+/* Site menu: a button in the title bar opens a panel of links. With no JavaScript the links simply show in the bar. */
+.menu-wrap{position:relative}
+.menu-btn{display:none;align-items:center;gap:8px;min-height:44px;padding:8px 12px;border:1px solid rgba(255,255,255,.45);border-radius:10px;background:transparent;color:var(--onhead);font:600 16px Barlow,system-ui,sans-serif;cursor:pointer}
+.menu-btn:hover{background:rgba(255,255,255,.12)}
+.menu-btn svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;fill:none}
+.menu-btn .x{display:none}.menu-btn[aria-expanded="true"] .x{display:block}.menu-btn[aria-expanded="true"] .bars{display:none}
+.js .menu-btn{display:inline-flex}
+#site-menu{display:flex;flex-wrap:wrap;gap:4px 14px}
+#site-menu a{font-size:15px;opacity:.92}
+#site-menu .sep{display:none}
+.js #site-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);z-index:20;flex-direction:column;flex-wrap:nowrap;gap:0;min-width:240px;background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.22);padding:6px}
+.js #site-menu.open{display:flex}
+.js #site-menu a{color:var(--text);opacity:1;font-size:17px;font-weight:600;padding:11px 14px;border-radius:9px}
+.js #site-menu a:hover{background:var(--bg)}
+.js #site-menu a[aria-current="page"]{color:var(--accent);background:var(--bg)}
+.js #site-menu .sep{display:block;height:1px;background:var(--border);margin:5px 8px}
+@media (max-width:520px){.menu-wrap{position:static}.bar{position:relative}.js #site-menu{left:16px;right:16px;top:calc(100% - 6px);min-width:0}}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+header :focus-visible{outline-color:#fff}
+.js #site-menu a:focus-visible{outline-color:var(--accent);outline-offset:-3px}
+/* Screenshot slots on Tour the App and User Guides. A missing picture shows a labeled box until the file is added. */
+.shot{margin:18px auto;max-width:300px;text-align:center}
+.shot img{width:100%;height:auto;border-radius:18px;border:1px solid var(--border);display:block;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.shot .ph{aspect-ratio:9/19.5;border:2px dashed var(--border);border-radius:18px;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;color:var(--muted);font-size:15px}
+.shot .ph b{color:var(--text);font-size:16px}
+.shot .ph code{font-size:13px;word-break:break-all}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+.small{font-size:15px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* Tour the App */
+.tour-hero{text-align:center;max-width:640px;margin:0 auto}
+.tour-hero .tagline{font-size:24px;font-weight:700;line-height:1.25;margin:4px 0 8px}
+.tour-hero .ready{max-width:560px;margin:10px auto 16px;text-align:left}
+/* Title centered over the card, with the Ready pill still at the right. */
+.ready .top.center{display:grid;grid-template-columns:1fr auto 1fr}
+.ready .top.center .pill{justify-self:end;white-space:nowrap}
+/* On a phone there is no room for both on one line: the pill goes under the centered title. */
+@media (max-width:480px){.ready .top.center{grid-template-columns:1fr;justify-items:center;gap:4px}.ready .top.center>span:first-child{display:none}.ready .top.center .pill{justify-self:center}}
+/* Yellow and red signals, in the app's own colors. */
+:root{--warn:#9A5B00;--bad:#B23A36}
+@media (prefers-color-scheme:dark){:root{--warn:#E8AC4C;--bad:#F08583}}
+.ready .part.warn svg{stroke:var(--warn)}.ready .part.warn span{color:var(--warn);font-weight:700}
+.ready .part.stop svg{stroke:var(--bad)}.ready .part.stop span{color:var(--bad);font-weight:700}
+.ready .pill.stop{background:#C0453F;border-color:#C0453F;color:#fff}
+.ready .pill.warn{background:#E8AC4C;border-color:#C98F2E;color:#3a2c00}
+/* A tour section with the picture under the text, full width (Boat Readiness). */
+.tour-sec.stack{grid-template-columns:1fr}
+.readiness-demo{margin:4px auto 0;max-width:560px;width:100%}
+.readiness-demo figcaption{font-size:14px;color:var(--muted);margin-top:8px;text-align:center}
+.tour-sec{display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:center;margin:44px 0;padding-top:28px;border-top:1px solid var(--border);scroll-margin-top:12px}
+.tour-sec.flip>div{order:2}
+.tour-sec h2{margin-top:0}
+.tour-sec ul{padding-left:22px}.tour-sec li{margin:5px 0}
+.tour-sec .shot{margin:0 auto;width:100%}
+@media (max-width:720px){.tour-sec{grid-template-columns:1fr;gap:8px}.tour-sec.flip>div{order:0}.tour-sec .shot{max-width:260px}}
+.pricing{margin:44px 0;padding-top:28px;border-top:1px solid var(--border)}
+.pricing .card{max-width:560px}.pricing .card ul{margin:8px 0;padding-left:22px}.pricing .card li{color:var(--text)}
+.tour-end{margin-top:40px;padding-top:28px;border-top:1px solid var(--border)}
+/* User Guides */
+.toc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 18px;margin:16px 0 8px}
+.toc h2{margin:4px 0 6px;font-size:20px}
+.toc ol{margin:0;padding-left:22px;columns:2 260px;column-gap:28px}
+.toc li{margin:3px 0;break-inside:avoid}.toc ol ol{columns:auto;padding-left:18px;font-size:16px}
+.guide h2{font-size:26px;margin:46px 0 8px;padding-top:18px;border-top:1px solid var(--border)}
+.guide h3{font-size:20px;margin:28px 0 6px}
+/* Links to a topic leave a little space above the heading. */
+.guide [id]{scroll-margin-top:12px}
+.guide .anchor{font-size:.75em;margin-left:8px;text-decoration:none;color:var(--muted);opacity:.7}
+.guide .anchor:hover,.guide .anchor:focus{opacity:1;color:var(--accent)}
+.guide ol>li,.guide ul>li{margin:5px 0}
+.guide .note{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;padding:10px 14px;margin:14px 0;font-size:16px}
+.guide .top{font-size:14px;display:inline-block;margin-top:8px}
+.guide dl{margin:8px 0}.guide dt{font-weight:700;margin-top:8px}.guide dd{margin:2px 0 0 18px}
+.guide table{margin:10px 0}
+/* Boating Guides: articles for boat owners, and the cards that link to them */
+.article h1{margin-bottom:10px}
+.article h2{font-size:23px;margin:34px 0 8px}
+.article h3{font-size:18px;margin:20px 0 4px}
+.article [id]{scroll-margin-top:12px}
+.article ul>li,.article ol>li{margin:4px 0}
+.article table{margin:10px 0}
+.article .crumbs{font-size:15px;margin:0 0 6px}
+.article .cta{margin:34px 0 16px;border-left:4px solid var(--accent)}
+.article .cta h2{margin:0 0 6px;font-size:20px}.article .cta p{color:var(--text);font-size:17px}
+.article .fine{margin-top:18px}
+a.card{display:block;color:inherit;text-decoration:none}
+a.card h3{color:var(--accent)}a.card:hover{border-color:var(--accent)}
+main{max-width:880px;margin:0 auto;padding:28px 16px 48px}
+h1{font-size:36px;line-height:1.15;margin:0 0 12px}
+h2{font-size:22px;margin:32px 0 8px}
+p,li{color:var(--text)}
+.muted{color:var(--muted)}
+.banner{position:relative;margin:-28px -16px 0;min-height:clamp(200px,38vw,380px);overflow:hidden;background:#1E9BF0}
+/* A light shade over the photo so the white text on it stays readable */
+.banner::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,20,30,.68) 0%,rgba(10,20,30,.58) 42%,rgba(10,20,30,.2) 70%,rgba(10,20,30,.1) 100%)}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.hero .icon{margin-top:-56px;position:relative;border:4px solid var(--bg)}
+/* The tagline, description and Boat Readiness card sit on the photo, centered between the title bar and the top of the app icon (which overlaps the photo by 56px). The photo grows to fit them. */
+.banner-card{position:relative;z-index:2;min-height:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:28px 16px 84px;text-align:center}
+.banner .tagline{margin:0;max-width:620px;color:#fff;font-size:30px;font-weight:700;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.65)}
+.banner .lead{margin:0 0 6px;max-width:560px;color:#fff;font-size:19px;font-weight:600;line-height:1.4;text-shadow:0 1px 8px rgba(0,0,0,.75)}
+.banner .ready{width:100%;max-width:560px;text-align:left;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+@media (max-width:600px){.banner .tagline{font-size:25px}.banner .lead{font-size:17px}}
+.feature{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:center;margin:36px 0}
+.feature img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block}
+.feature h2{margin-top:0}
+.hero{text-align:center;padding:0 0 8px}
+.hero img.icon{width:112px;height:112px;border-radius:26px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.hero p.tagline{font-size:26px;font-weight:700;line-height:1.25;max-width:560px;margin:4px auto 10px}
+.hero p.lead{font-size:20px;color:var(--muted);max-width:560px;margin:0 auto 20px}
+.stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.store{display:inline-flex;flex-direction:column;background:#111;color:#fff;text-decoration:none;border:1px solid #444;border-radius:12px;padding:8px 22px;min-width:190px;text-align:left}
+.store .small{font-size:12px;opacity:.85}.store .big{font-size:22px;font-weight:700;line-height:1.2}
+.store.soon{opacity:.55}
+.qrs{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin:24px 0}
+.qr{margin:0;text-align:center}
+.qr img,.qr .qrbox{width:160px;height:160px;border-radius:10px;border:1px solid var(--border);background:#fff;display:block;margin:0 auto 6px}
+.qr .qrbox{display:flex;align-items:center;justify-content:center;padding:12px;font-size:13px;color:#4F5B66;background:var(--card)}
+.qr figcaption{font-size:14px;color:var(--muted);max-width:170px}
+/* Forms (Join the Beta) */
+.form{max-width:620px;margin:20px 0;padding:20px 22px}
+.form .field{margin:0 0 16px;border:0;padding:0}
+.form label,.form legend{display:block;font-weight:600;margin:0 0 5px;padding:0}
+.form .opt{font-weight:400;color:var(--muted)}
+.form input[type=text],.form input[type=email],.form input[type=number],.form select,.form textarea{width:100%;min-height:46px;padding:9px 12px;font:17px Barlow,system-ui,sans-serif;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:10px}
+.form textarea{resize:vertical}
+.form .row{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+@media (max-width:520px){.form .row{grid-template-columns:1fr;gap:0}}
+.form .choices{display:flex;gap:10px 22px;flex-wrap:wrap}
+.form .choices label,.form .check{display:flex;align-items:center;gap:8px;font-weight:400;min-height:44px;margin:0;cursor:pointer}
+.form input[type=radio],.form input[type=checkbox]{width:22px;height:22px;accent-color:var(--accent);margin:0}
+.form .check{font-weight:600}
+.form .hint{font-size:15px;color:var(--muted);margin:6px 0 0}
+.form .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .error{color:var(--bad);font-weight:600;margin:14px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:16px;padding:10px 26px;border:0;border-radius:12px;background:var(--accent);color:#fff;font:700 18px Barlow,system-ui,sans-serif;cursor:pointer}
+@media (prefers-color-scheme:dark){.btn{color:#0B1620}}
+.btn:hover{filter:brightness(1.08)}.btn:disabled{opacity:.6;cursor:wait}
+a.btn{text-decoration:none}
+/* Join the Beta button on the home page, under the store buttons */
+.beta-cta{display:flex;flex-direction:column;align-items:center;gap:6px;margin:8px 0 4px}
+.beta-cta .btn{margin-top:0}.beta-cta .muted{font-size:15px}
+.done{max-width:620px;margin:20px 0;border-left:4px solid var(--ok)}
+.done h2{margin:0 0 6px}.done p{color:var(--text);margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}
+.grid .wide{grid-column:span 2}
+@media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.grid{grid-template-columns:1fr}.grid .wide{grid-column:auto}}
+/* Boat Readiness card: a copy of the one on the app's Home screen */
+.ready{display:flex;flex-direction:column;gap:8px;justify-content:center}
+/* The readiness card sits in the top section, right under the tagline. */
+.hero .ready{max-width:560px;margin:6px auto 18px;text-align:left}
+.ready .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ready .top strong{font-size:17px}
+.ready .pill{border:1px solid var(--ok);color:var(--ok);border-radius:999px;padding:1px 11px;font-size:13px;font-weight:700}
+.ready .parts{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;text-align:center}
+.ready .part{display:flex;flex-direction:column;align-items:center;gap:1px}
+.ready .part svg{width:26px;height:26px;stroke:var(--ok);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:2px}
+.ready .part b{font-size:15px}.ready .part span{font-size:13px;color:var(--ok);font-weight:500}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.card h3{margin:0 0 4px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:15.5px}
+.legal a{display:block;padding:12px 0;border-bottom:1px solid var(--border);text-decoration:none;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--card)}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px}
+footer div{max-width:880px;margin:0 auto;padding:18px 16px;display:flex;gap:16px;flex-wrap:wrap}
+footer .sp{margin-right:auto}
+footer div{align-items:center}
+footer .social{display:inline-flex;gap:6px;margin-left:4px}
+footer .social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;color:var(--muted)}
+footer .social a:hover,footer .social a:focus-visible{color:var(--accent);background:var(--card)}
+footer .social svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9}
+footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
+</style>
+</head>
+<body class="">
+<header><div class="bar">
+  <a class="brand" href="index.html"><img src="icon.png" alt=""><span class="wordmark">SlipMate</span></a>
+  <div class="menu-wrap">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu">
+      <svg class="bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span>Menu</span>
+    </button>
+    <nav id="site-menu" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="tour.html">Tour the App</a>
+      <a href="user-guides.html">User Guides</a>
+      <a href="boating-guides.html">Boating Guides</a>
+      <a href="support.html">Support</a>
+      <a href="beta.html">Join the Beta</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="delete-account.html">Delete Account</a>
+    </nav>
+  </div>
+</div></header>
+<main>
+<article class="article">
+<p class="crumbs"><a href="boating-guides.html">Boating Guides</a></p>
+<h1>Keeping Your Boat in a Spreadsheet, and Moving It to an App</h1>
+<p>Many owners have kept their boat in a spreadsheet for years: a list of jobs, the date and hours they were done, the parts they bought and when the flares expire. A good spreadsheet is a fine record. A messy one hides the things you most need to know, such as which service is overdue.</p>
+<p>This guide shows a layout that works, the small habits that keep it useful, and how to tidy it up if you decide to move it into an app.</p>
+
+<h2 id="step-1-one-tab-for-each-kind-of-list">Step 1: Use one tab for each kind of list</h2>
+<p>Mixing everything on one sheet is where most spreadsheets go wrong. Give each kind of information its own tab:</p>
+<ul>
+  <li><strong>Boat:</strong> the specs, as two columns: a label and its value (LOA, beam, draft, HIN, registration, tank sizes).</li>
+  <li><strong>Engines:</strong> one row per engine and generator: position (Port, Starboard, Generator), make and model, serial number and current hours.</li>
+  <li><strong>Schedule:</strong> one row per recurring job: what it is, how often, and when it was last done.</li>
+  <li><strong>History:</strong> one row per job done: the date, what was done, the engine hours and who did it.</li>
+  <li><strong>Parts:</strong> one row per spare: name, part number, how many you have, and where it is stored.</li>
+  <li><strong>Safety:</strong> one row per item: how many, where it is, and when it expires.</li>
+  <li><strong>Systems:</strong> installed equipment and electronics, with make, model and serial number.</li>
+</ul>
+<p>Put the column headings in the first row of each tab, and nothing above them.</p>
+
+<h2 id="step-2-keep-the-schedule-and-the-history-apart">Step 2: Keep the schedule and the history apart</h2>
+<p>The schedule says what should happen. The history says what did happen. When they are mixed, an old row looks like a job still to do, and a job still to do looks finished.</p>
+<p>When you finish a job, add a row to the history, then update the job’s <em>Last done</em> date and hours on the schedule. Use the same name in both places (“Oil and filter change”, not “oil chg” in one and “Oil service” in the other), so you can always match them up.</p>
+
+<h2 id="step-3-write-intervals-a-way-that-can-be-counted">Step 3: Write intervals in a way that can be counted</h2>
+<p>An interval is only useful if you can tell when it comes due. Write it as a number with a unit:</p>
+<ul>
+  <li>“100 hours”, “12 months” or “2 years”</li>
+  <li>“100 hours or 12 months” when it is whichever comes first, as most engine makers specify</li>
+</ul>
+<p>Avoid intervals like “seasonal”, “as needed” or “when it looks worn”. They are fine as notes, but they never come due, so the job is easy to forget. If a job is really done every spring, write “12 months”.</p>
+<p>A clean layout uses two columns, <em>Every (hours)</em> and <em>Every (months)</em>, so each one holds a plain number.</p>
+
+<h2 id="step-4-make-every-date-a-full-date">Step 4: Make every date a full date</h2>
+<p>A due date can only be worked out from a full date. “Spring 2024” or “2023” cannot tell you whether a job is due next week or next year.</p>
+<ul>
+  <li>Use the spreadsheet’s own date format, so the cell holds a real date and not text.</li>
+  <li>Pick one style and keep to it. In the US, 3/4/2025 means March 4; in much of the world it means 3 April. Writing 2025-03-04 removes any doubt.</li>
+  <li>If you only know the month, pick a day and say so in the notes (“about mid-May”).</li>
+</ul>
+
+<h2 id="step-5-log-engine-hours-every-time">Step 5: Log engine hours every time</h2>
+<p>Most engine jobs are due by hours as well as by the calendar. Each history row for engine work should have the hour-meter reading and say which engine it was for, on a boat with more than one. Without the hours, an oil change every 100 hours can only be guessed.</p>
+<p>Keep the current hours for each engine up to date on the Engines tab, too.</p>
+
+<h2 id="step-6-keep-units-and-numbers-plain">Step 6: Keep units and numbers plain</h2>
+<ul>
+  <li>Put the unit in the column heading, such as <em>Fuel (gal)</em> or <em>LOA (ft)</em>, and only the number in each cell.</li>
+  <li>Use one unit per column. A tank in liters on one row and gallons on the next is an easy way to order the wrong amount of fuel.</li>
+  <li>Leave a cell blank rather than writing “n/a”, “?” or “TBD”.</li>
+</ul>
+
+<h2 id="step-7-tidy-up-before-you-move-it">Step 7: Tidy up before you move it to an app</h2>
+<p>If you are moving your records into an app, a short clean-up first saves time afterwards:</p>
+<ol>
+  <li>Split any one-sheet record into the tabs above.</li>
+  <li>Make sure every row has a name in its first column. Rows with no name usually cannot be brought in.</li>
+  <li>Give every scheduled job an interval, and a last-done date if you know it.</li>
+  <li>Use the same engine names everywhere (Port, Starboard, Generator), matching the Engines tab.</li>
+  <li>Remove duplicate rows, totals and notes typed between the rows.</li>
+  <li>Save the file as <strong>.xlsx</strong> or <strong>.csv</strong>. Excel, Numbers and Google Sheets can all do this.</li>
+  <li>Keep a copy of the original, just in case.</li>
+</ol>
+<p>Don’t worry about filling every gap. A few blank serial numbers do no harm. The things worth fixing are the ones that drive due dates: intervals, last-done dates and engine hours.</p>
+
+<div class="card cta" id="bringing-it-into-slipmate">
+<h2>Bringing it into SlipMate</h2>
+<p>SlipMate can import your spreadsheet: boat specs, engines, maintenance schedule, service history, parts, safety gear and systems, from an .xlsx or .csv. It matches your own column names, shows a preview of what will come in and what needs a look, and only fills boat details that are still blank. It can also give you a blank template with the tabs above. See <a href="user-guides.html#import">Import from a spreadsheet</a> in the User Guides.</p>
+<p>After that, SlipMate keeps your service, parts, safety gear, fuel, trips and documents in one place, even with no signal.</p>
+</div>
+<p class="muted small fine">This guide is general information. It is not a substitute for your engine maker’s manual or a qualified marine mechanic. Always use the service intervals your manuals give for your exact engines and equipment.</p>
+<p class="more">More <a href="boating-guides.html">guides for boat owners</a>.</p>
+</article>
+
+</main>
+<footer><div>
+  <span class="sp">© 2026 UnderwayApps LLC</span>
+  <a href="tour.html">Tour the App</a><a href="user-guides.html">User Guides</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a><span class="social"><a href="https://www.instagram.com/underwayapps/" rel="me noopener" target="_blank" aria-label="SlipMate on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="dot"/></svg></a><a href="https://www.facebook.com/profile.php?id=61596876204786" rel="me noopener" target="_blank" aria-label="SlipMate on Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5h2.5V5H14c-2.2 0-3.5 1.5-3.5 3.6V11H8v3.5h2.5V21h3.6v-6.5h2.4l.5-3.5h-2.9V9.2c0-.4.3-.7.7-.7z" class="fill"/></svg></a></span>
+</div></footer>
+<script>
+/* Site menu: the button opens and closes it; Escape, a click outside, tabbing away or picking a link closes it. The page you are on is marked. */
+(function () {
+  var btn = document.querySelector('.menu-btn'), menu = document.getElementById('site-menu');
+  if (!btn || !menu) return;
+  var page = function (p) { return (p.split('/').pop() || 'index').replace(/\.html$/, '') || 'index'; };
+  var here = page(location.pathname);
+  menu.querySelectorAll('a').forEach(function (a) { if (page(a.getAttribute('href')) === here) a.setAttribute('aria-current', 'page'); });
+  function setOpen(open, focusButton) {
+    menu.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    if (open) menu.querySelector('a').focus();
+    else if (focusButton) btn.focus();
+  }
+  btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('open')) setOpen(false, true); });
+  document.addEventListener('click', function (e) { if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) setOpen(false); });
+  menu.addEventListener('focusout', function (e) { if (e.relatedTarget && !menu.contains(e.relatedTarget) && e.relatedTarget !== btn) setOpen(false); });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "773e6ab4299f4438937f1b35236b8722"}'></script>
+</body>
+</html>

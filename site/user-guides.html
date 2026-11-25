@@ -253,6 +253,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
         <li><a href="#sign-in">Sign in and reset your password</a></li>
         <li><a href="#add-boat">Add your boat</a></li>
         <li><a href="#boat-setup">Boat Setup</a></li>
+        <li><a href="#import">Import from a spreadsheet</a></li>
       </ol></li>
     <li><a href="#getting-around">Getting around</a>
       <ol>
@@ -359,7 +360,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 <h3 id="boat-setup">Boat Setup</h3>
 <p>Boat Setup asks about your boat, engines and systems, then builds a maintenance schedule and a parts list for you to start from. You can skip any step and come back.</p>
 <ol>
-  <li>On Home, find the <strong>Set up your boat</strong> card and tap <strong>Start setup</strong>. (Tap <strong>Hide this</strong> if you’d rather add everything yourself.)</li>
+  <li>On Home, find the <strong>Set up your boat</strong> card and tap <strong>Start setup</strong>. (Tap <strong>Hide this</strong> if you’d rather add everything yourself. Kept your boat in a spreadsheet? Tap <strong>Have a spreadsheet? Import it</strong> on the same card: see <a href="#import">Import from a spreadsheet</a>.)</li>
   <li>Each screen shows <strong>Step X of Y</strong> and a progress bar. Tap <strong>‹</strong> at the top left to go back, or <strong>Skip for now</strong> at the top right to leave and finish later.</li>
 </ol>
 <p>The steps are:</p>
@@ -395,6 +396,32 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 </ul>
 <div class="note">Suggested services, parts and intervals are starting points, not instructions. Always follow your manufacturer’s manual. See <a href="terms.html#suggested-parts">Suggested parts and service intervals</a> in the Terms of Use.</div>
 <p>To run Boat Setup again (for example after repowering), go to <a href="#settings-boats">Settings › Boats</a> and tap <strong>Run boat setup again for</strong> your boat. A rerun updates your schedule; it doesn’t make duplicates.</p>
+<h3 id="import">Import from a spreadsheet</h3>
+<p>Kept your boat in Excel, Numbers or Google Sheets? SlipMate can bring it in instead of you typing it again: boat specs and capacities, engines, the maintenance schedule, service history, parts, safety gear, and systems and electronics. For tips on getting a spreadsheet ready, see <a href="boat-maintenance-spreadsheet.html">Keeping your boat in a spreadsheet</a>.</p>
+<ol>
+  <li>Save or download your spreadsheet as <strong>.xlsx</strong> or <strong>.csv</strong> and put it on your phone (in Files, Google Drive, or an email to yourself). Older .xls files need saving as .xlsx first.</li>
+  <li>Open the import: tap <strong>Have a spreadsheet? Import it</strong> on the <strong>Set up your boat</strong> card on Home, or <strong>Import From a Spreadsheet</strong> in <a href="#settings-account">Settings › Account</a>.</li>
+  <li>Tap <strong>Choose Spreadsheet</strong> and pick your file.</li>
+  <li><strong>Check The Columns:</strong> SlipMate guesses what each tab holds (Boat, Engines, Schedule, History, Parts, Safety or Systems) and which SlipMate field each column goes in, with an example from your sheet beside it. Tap any guess to change it. A column that doesn’t fit can go <strong>Add to notes</strong> or <strong>Don’t import</strong>. Tap <strong>Preview</strong>.</li>
+  <li><strong>Preview:</strong> every row is sorted into <strong>Ready</strong>, <strong>Needs a look</strong> (it comes in, with a note on what’s missing) and <strong>Skipped</strong> (with the reason, such as a row with no name, or something already in SlipMate). Nothing is saved yet. Tap <strong>Back</strong> to change a match.</li>
+  <li>Tap <strong>Import</strong>. The summary shows what came in.</li>
+  <li>If an engine has no hours yet, tap <strong>Enter Engine Hours</strong> so hours-based services can count down. Tap any row under <strong>Needs A Look</strong> to fill in what’s missing.</li>
+</ol>
+<p><strong>No spreadsheet yet, or want the closest match?</strong> Tap <strong>Get The Template</strong> on the first screen. It shares a blank .xlsx with one tab for each list and SlipMate’s column names, to fill in on your computer.</p>
+<p><strong>How your sheet is read:</strong></p>
+<ul>
+  <li><strong>Your own column names are fine.</strong> “Hrs”, “Job”, “Date done”, “Part #” and the like are matched for you.</li>
+  <li><strong>Units are converted.</strong> Liters become gallons, and meters or feet-and-inches become feet. Text such as “$”, “hrs” and the commas in “1,234” is removed.</li>
+  <li><strong>Dates are read US style</strong> (3/4/2025 is March 4). A date that isn’t exact, such as “Spring 2024” or just a year, is left blank and flagged rather than guessed.</li>
+  <li><strong>Intervals</strong> such as “100 hrs”, “12 months”, “2 years”, “annually” or “100 hrs or 1 yr” are understood. “Seasonal” or “as needed” are flagged, because they never come due.</li>
+  <li><strong>Boat details only fill what’s blank.</strong> Your boat’s name and anything you’ve already entered stay as they are.</li>
+  <li><strong>Hours-based services</strong> count the highest of your main engines unless the row names one engine (such as Port), matching the engine’s position.</li>
+  <li><strong>Service history</strong> is matched to scheduled services by name. A newer entry in the history sets the service’s last-done date. Untick <strong>Use the service history for last-done dates</strong> on the preview to keep your sheet’s dates.</li>
+  <li><strong>Cost and invoice numbers</strong> from the history are kept in the entry’s notes.</li>
+  <li><strong>Importing the same sheet again</strong> skips what’s already there, so nothing is doubled.</li>
+</ul>
+<p>The import works with no signal: it’s saved on your phone and syncs when there’s a signal.</p>
+<p><strong>Change your mind?</strong> Tap <strong>Undo This Import</strong> on the summary, or <strong>Undo Last Import</strong> on the import screen later. It removes everything the import added, on every phone. Boat details it filled in stay.</p>
 <a class="top" href="#top">Back to top</a>
 </section>
 
@@ -437,7 +464,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 <p>Along the bottom of Home and the area screens:</p>
 <ul>
   <li><strong>Home</strong></li>
-  <li><strong>Service:</strong> the Maintenance area.</li>
+  <li><strong>Hours:</strong> opens the <a href="#update-hours">Update hours</a> box over the screen you’re on.</li>
   <li><strong>Trips:</strong> your trip log and float plans.</li>
   <li><strong>Safety:</strong> your safety gear.</li>
   <li><strong>Settings:</strong> opens the <a href="#settings">Settings</a> sheet.</li>
@@ -488,6 +515,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
   <li><strong>Plan:</strong> one yearly subscription that includes up to two boats and every feature, with a 30-day free trial. Starting the trial from inside the app is coming soon.</li>
   <li><strong>Sign Out:</strong> if some changes haven’t synced yet, SlipMate warns you first, because they would be lost. Choose <strong>Stay Signed In</strong> and sync, or <strong>Sign Out Anyway</strong>.</li>
   <li><strong>Export All My Data:</strong> see <a href="#export">Export all your data</a>.</li>
+  <li><strong>Import From a Spreadsheet:</strong> see <a href="#import">Import from a spreadsheet</a>.</li>
   <li><strong>Delete Account:</strong> see <a href="#delete-account">Delete your account</a>.</li>
 </ul>
 
@@ -593,8 +621,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 <p>SlipMate keeps a history of hour-meter readings for each engine. An engine’s current hours are its highest reading. Services measured in hours count down from those readings.</p>
 <h3 id="update-hours">Update the hours</h3>
 <ol>
-  <li>Go to <strong>Service</strong> on the bottom bar. The <strong>Vessel Hours</strong> card at the top shows each engine’s hours and when they were last updated.</li>
-  <li>Tap any reading. The <strong>Update hours</strong> box opens with a box for each engine.</li>
+  <li>Tap <strong>Hours</strong> on the bottom bar. The <strong>Update hours</strong> box opens with a box for each engine. (Or open <strong>Maintenance</strong> on Home and tap any reading on the <strong>Vessel Hours</strong> card at the top, which shows each engine’s hours and when they were last updated.)</li>
   <li>Type each meter as it reads now. You can leave an engine blank if you didn’t check it.</li>
   <li>Tap <strong>Save</strong>.</li>
 </ol>
@@ -617,7 +644,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 
 <section id="maintenance">
 <h2>Maintenance</h2>
-<p>Tap <strong>Service</strong> on the bottom bar, or <strong>Maintenance</strong> on Home.</p>
+<p>Tap <strong>Maintenance</strong> on Home.</p>
 
 <h3 id="scheduled">Scheduled services</h3>
 <p><strong>Scheduled</strong> lists your recurring services in the order they come due: overdue first, then due soon, then the rest. Each card shows <strong>Next due</strong> and <strong>Last completed</strong>.</p>
