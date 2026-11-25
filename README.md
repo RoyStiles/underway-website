@@ -24,6 +24,6 @@ In PowerShell: `cd G:\Underway\underway-website`, then `npm run preview`, then o
 - Set `siteUrl` and `supportEmail` in `config.json` (the page shows `YOUR-DOMAIN` until then).
 - Set `playStoreUrl` to `https://play.google.com/store/apps/details?id=com.underwayapps.slipmate` once the app is live on Google Play (it is blank now, so the site shows "Coming soon").
 - Set `appStoreUrl` once Apple gives the app an ID (`https://apps.apple.com/app/id1234567890`). The Apple QR and `/get` QR appear on the next build.
-- Have the Privacy Policy and Terms read by a lawyer, and make sure they match the Apple privacy labels and Google Data safety form.
+- Make sure the Privacy Policy and Terms match the Apple privacy labels and Google Data safety form.
 
 URLs to paste into the stores: Privacy `/privacy.html`, Support `/support.html`, Account deletion (Google) `/delete-account.html`, Terms `/terms.html`.
