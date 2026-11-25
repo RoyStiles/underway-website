@@ -179,6 +179,10 @@ p,li{color:var(--text)}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:16px;padding:10px 26px;border:0;border-radius:12px;background:var(--accent);color:#fff;font:700 18px Barlow,system-ui,sans-serif;cursor:pointer}
 @media (prefers-color-scheme:dark){.btn{color:#0B1620}}
 .btn:hover{filter:brightness(1.08)}.btn:disabled{opacity:.6;cursor:wait}
+a.btn{text-decoration:none}
+/* Join the Beta button on the home page, under the store buttons */
+.beta-cta{display:flex;flex-direction:column;align-items:center;gap:6px;margin:8px 0 4px}
+.beta-cta .btn{margin-top:0}.beta-cta .muted{font-size:15px}
 .done{max-width:620px;margin:20px 0;border-left:4px solid var(--ok)}
 .done h2{margin:0 0 6px}.done p{color:var(--text);margin:0}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}
