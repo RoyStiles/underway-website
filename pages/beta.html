@@ -1,0 +1,130 @@
+<!-- title: Join the SlipMate Beta -->
+<!-- description: Help test SlipMate before it launches. Sign up to try the app on your iPhone or Android phone and tell us what works on your boat. -->
+<h1>Join the SlipMate Beta</h1>
+<p>SlipMate is almost ready, and we’d like boat owners to try it first. Beta testers get the app early on their own phone, use it on their own boat, and tell us what works and what doesn’t.</p>
+<p>Sign up below and we’ll email you an invite when there’s a place for you. iPhone testers get the app through Apple’s TestFlight app; Android testers get it from Google Play.</p>
+
+<noscript><p class="card">This form needs JavaScript. To sign up without it, email <a href="mailto:{{supportEmail}}?subject=SlipMate%20beta">{{supportEmail}}</a> with your name and whether you use an iPhone or Android phone.</p></noscript>
+
+<form id="beta-form" class="card form" novalidate>
+  <div class="field">
+    <label for="b-name">Your name</label>
+    <input id="b-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+  </div>
+
+  <fieldset class="field">
+    <legend>Your phone</legend>
+    <div class="choices">
+      <label><input type="radio" name="phone" value="iphone" required> iPhone</label>
+      <label><input type="radio" name="phone" value="android"> Android</label>
+      <label><input type="radio" name="phone" value="both"> Both</label>
+    </div>
+  </fieldset>
+
+  <div class="field">
+    <label for="b-email">Email</label>
+    <input id="b-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="b-email-hint">
+    <p class="hint" id="b-email-hint">On Android, use the email of your Google account, because Google Play needs it to let you in. On iPhone, use the email you’d like the TestFlight invite sent to (your Apple ID email is easiest).</p>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="b-boat">Boat type <span class="opt">(optional)</span></label>
+      <select id="b-boat" name="boat_type">
+        <option value=""></option>
+        <option>Powerboat or cruiser</option>
+        <option>Center console or fishing boat</option>
+        <option>Trawler</option>
+        <option>Sailboat</option>
+        <option>Catamaran</option>
+        <option>Pontoon</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="b-length">Length in feet <span class="opt">(optional)</span></label>
+      <input id="b-length" name="boat_length_ft" type="number" inputmode="decimal" min="1" max="499" step="0.5">
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="b-waters">Where you boat <span class="opt">(optional)</span></label>
+    <input id="b-waters" name="home_waters" type="text" maxlength="100" placeholder="For example Chesapeake Bay or Lake Michigan">
+  </div>
+
+  <div class="field">
+    <label for="b-heard">How you heard about SlipMate <span class="opt">(optional)</span></label>
+    <input id="b-heard" name="heard_from" type="text" maxlength="100">
+  </div>
+
+  <div class="field">
+    <label for="b-notes">Anything else <span class="opt">(optional)</span></label>
+    <textarea id="b-notes" name="notes" rows="4" maxlength="1000" placeholder="What you’d most like an app like this to do for your boat"></textarea>
+  </div>
+
+  <!-- Spam trap: hidden from people, filled in by bots. A filled-in form is quietly dropped. -->
+  <div class="trap" aria-hidden="true">
+    <label for="b-website">Website</label>
+    <input id="b-website" name="website" type="text" tabindex="-1" autocomplete="off">
+  </div>
+
+  <label class="check"><input type="checkbox" name="email_ok" required> OK to email me about the SlipMate beta</label>
+  <p class="hint">We use your answers only to choose and invite beta testers. See the <a href="privacy.html#beta">Privacy Policy</a>.</p>
+
+  <p class="error" id="b-error" role="alert" hidden></p>
+  <button type="submit" class="btn">Sign Me Up</button>
+</form>
+
+<div id="beta-done" class="card done" role="status" hidden tabindex="-1">
+  <h2>Thanks, You’re on the List</h2>
+  <p id="beta-done-text">We’ll email you when there’s a place in the beta.</p>
+</div>
+
+<script>
+/* Beta sign-up: sends the form to SlipMate's database (Supabase). The website can only add sign-ups, never read them. */
+(function () {
+  var form = document.getElementById('beta-form'), err = document.getElementById('b-error');
+  var done = document.getElementById('beta-done'), doneText = document.getElementById('beta-done-text');
+  var btn = form.querySelector('button[type="submit"]');
+  var URL = '{{supabaseUrl}}/rest/v1/beta_signups', KEY = '{{supabasePublishableKey}}';
+
+  function showError(msg) { err.innerHTML = msg; err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+  function finish(text) { form.hidden = true; if (text) doneText.textContent = text; done.hidden = false; done.focus(); }
+  function val(name) { var v = (form.elements[name].value || '').trim(); return v === '' ? null : v; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    // Bots fill in the hidden field: pretend it worked and send nothing.
+    if (form.elements.website.value) { finish(); return; }
+
+    var name = val('name'), email = val('email'), phone = (form.querySelector('input[name="phone"]:checked') || {}).value;
+    var len = val('boat_length_ft');
+    var missing = [];
+    if (!name) missing.push('your name');
+    if (!phone) missing.push('your phone');
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) missing.push('a valid email');
+    if (len !== null && !(Number(len) > 0 && Number(len) < 500)) missing.push('a boat length between 1 and 499 feet');
+    var msgs = [];
+    if (missing.length) msgs.push('Please add ' + missing.join(', ') + '.');
+    if (!form.elements.email_ok.checked) msgs.push('Please tick “OK to email me about the SlipMate beta” so we can send your invite.');
+    if (msgs.length) { showError(msgs.join(' ')); return; }
+
+    var row = { name: name, email: email, phone: phone, boat_type: val('boat_type'),
+      boat_length_ft: len === null ? null : Number(len), home_waters: val('home_waters'),
+      heard_from: val('heard_from'), notes: val('notes'), email_ok: true };
+
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(URL, { method: 'POST', headers: { apikey: KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(row) })
+      .then(function (r) {
+        if (r.ok) { finish(); return; }
+        if (r.status === 409) { finish('That email is already on the list. We’ll be in touch when there’s a place in the beta.'); return; }
+        throw new Error('HTTP ' + r.status);
+      })
+      .catch(function () {
+        showError('Sorry, that didn’t go through. Please try again in a minute, or email <a href="mailto:{{supportEmail}}?subject=SlipMate%20beta">{{supportEmail}}</a> to sign up.');
+      })
+      .finally(function () { btn.disabled = false; btn.textContent = 'Sign Me Up'; });
+  });
+})();
+</script>

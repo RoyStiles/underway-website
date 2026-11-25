@@ -161,6 +161,27 @@ p,li{color:var(--text)}
 .qr img,.qr .qrbox{width:160px;height:160px;border-radius:10px;border:1px solid var(--border);background:#fff;display:block;margin:0 auto 6px}
 .qr .qrbox{display:flex;align-items:center;justify-content:center;padding:12px;font-size:13px;color:#4F5B66;background:var(--card)}
 .qr figcaption{font-size:14px;color:var(--muted);max-width:170px}
+/* Forms (Join the Beta) */
+.form{max-width:620px;margin:20px 0;padding:20px 22px}
+.form .field{margin:0 0 16px;border:0;padding:0}
+.form label,.form legend{display:block;font-weight:600;margin:0 0 5px;padding:0}
+.form .opt{font-weight:400;color:var(--muted)}
+.form input[type=text],.form input[type=email],.form input[type=number],.form select,.form textarea{width:100%;min-height:46px;padding:9px 12px;font:17px Barlow,system-ui,sans-serif;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:10px}
+.form textarea{resize:vertical}
+.form .row{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+@media (max-width:520px){.form .row{grid-template-columns:1fr;gap:0}}
+.form .choices{display:flex;gap:10px 22px;flex-wrap:wrap}
+.form .choices label,.form .check{display:flex;align-items:center;gap:8px;font-weight:400;min-height:44px;margin:0;cursor:pointer}
+.form input[type=radio],.form input[type=checkbox]{width:22px;height:22px;accent-color:var(--accent);margin:0}
+.form .check{font-weight:600}
+.form .hint{font-size:15px;color:var(--muted);margin:6px 0 0}
+.form .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .error{color:var(--bad);font-weight:600;margin:14px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:16px;padding:10px 26px;border:0;border-radius:12px;background:var(--accent);color:#fff;font:700 18px Barlow,system-ui,sans-serif;cursor:pointer}
+@media (prefers-color-scheme:dark){.btn{color:#0B1620}}
+.btn:hover{filter:brightness(1.08)}.btn:disabled{opacity:.6;cursor:wait}
+.done{max-width:620px;margin:20px 0;border-left:4px solid var(--ok)}
+.done h2{margin:0 0 6px}.done p{color:var(--text);margin:0}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0}
 .grid .wide{grid-column:span 2}
 @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -207,6 +228,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
       <a href="user-guides.html">User Guides</a>
       <a href="boating-guides.html">Boating Guides</a>
       <a href="support.html">Support</a>
+      <a href="beta.html">Join the Beta</a>
       <span class="sep" aria-hidden="true"></span>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Use</a>
