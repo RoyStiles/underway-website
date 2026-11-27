@@ -241,7 +241,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 </div></header>
 <main>
 <h1>Privacy Policy</h1>
-<p class="muted">Last updated November 25, 2026</p>
+<p class="muted">Last updated November 26, 2026</p>
 <p>SlipMate is a boat-management app. This policy explains what information the app collects, why, and the choices you have. In short: we collect what you enter to run your boat records, we don’t sell it, and we don’t show ads.</p>
 
 <h2>What we collect</h2>
@@ -273,11 +273,15 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 <ul>
   <li><strong>Supabase</strong>: hosts our database, sign-in and file storage.</li>
   <li><strong>Sentry</strong>: receives crash reports so we can find and fix bugs.</li>
+  <li><strong>Anthropic</strong>: only if you turn on AI features, reads the files you choose to have read (see <a href="#ai">AI features</a> below).</li>
   <li><strong>An email delivery service</strong>: sends us your feature suggestions and submissions.</li>
   <li><strong>OpenStreetMap</strong>: marina, fuel dock and anchorage listings come from OpenStreetMap contributors. Your own position is used on your phone to find nearby places.</li>
   <li><strong>Apple and Google</strong>: handle app downloads and, when you start a free trial or subscribe, the payment. We never see your card details. If you import a spreadsheet from a Google Drive link, your phone downloads it directly from Google.</li>
 </ul>
 <p>We may disclose information if the law requires it.</p>
+
+<h2 id="ai">AI features (optional)</h2>
+<p>If you turn on AI in SlipMate, files you choose to have read (receipt photos, manuals, spec sheets) and, for questions, the boat records needed to answer, are sent from our server to Anthropic, PBC, which provides the Claude AI model. We send only what the feature needs and never your name, email address, boat name, HIN, registration or MMSI. Anthropic processes this data to provide the service and does not use it to train its models. Results come back to SlipMate as suggestions, and nothing is added to your records unless you accept it. We keep a count of AI uses on your account to apply your plan’s allowance. You can turn AI off at any time in Settings › AI.</p>
 
 <h2 id="beta">Beta sign-ups</h2>
 <p>If you sign up on our <a href="beta.html">Join the Beta</a> page, we collect the name, email address and phone type you give us, and any optional answers (boat type and length, where you boat, how you heard about SlipMate, and your comments). We use them only to choose beta testers, to send you a TestFlight or Google Play invite, and to email you about the beta. To invite you, we give your email address to Apple (TestFlight) or Google (Google Play testing). Sign-ups are stored in our Supabase database and only we can see them. To be removed, email <a href="mailto:Support@UnderwayApps.com">Support@UnderwayApps.com</a> and we’ll delete your sign-up.</p>
@@ -292,6 +296,7 @@ footer .social svg .dot,footer .social svg .fill{fill:currentColor;stroke:none}
 <ul>
   <li>Edit or delete any record in the app at any time.</li>
   <li>Turn off location, camera or photo access in your phone’s settings; the rest of the app keeps working.</li>
+  <li>Turn AI features on or off in the app (Settings › AI). They are off until you agree on the AI screen.</li>
   <li>Download a complete copy of your data in the app (Settings › Account › Export all my data): a zip file with a spreadsheet (CSV) for each section of every boat you own, plus your manuals, docs and photos. We recommend doing this before you delete your account.</li>
   <li>Delete your account in the app (Settings › Account › Delete account) or by emailing us.</li>
   <li>Ask us for a copy of your information, or to correct it, at the email below.</li>
